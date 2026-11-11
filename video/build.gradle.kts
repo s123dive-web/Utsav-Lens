@@ -15,6 +15,7 @@ android {
 }
 
 dependencies {
+    api(project(":platform"))
     api(project(":core"))
     api(project(":themes"))
     implementation(project(":engine-lite"))

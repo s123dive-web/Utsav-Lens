@@ -33,6 +33,7 @@ android {
 dependencies {
     implementation(project(":core"))
     implementation(project(":themes"))
+    implementation(project(":platform"))
     implementation(project(":segmentation"))
     implementation(project(":engine-api"))
     implementation(project(":engine-lite"))

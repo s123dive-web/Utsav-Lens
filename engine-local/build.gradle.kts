@@ -15,6 +15,7 @@ android {
 }
 
 dependencies {
+    api(project(":platform"))
     api(project(":engine-api"))
     api(project(":themes"))
     api(project(":segmentation"))

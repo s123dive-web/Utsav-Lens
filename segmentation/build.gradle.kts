@@ -15,6 +15,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":platform"))
+    implementation(libs.mediapipe.tasks.vision)
     api(project(":core"))
     implementation(libs.coroutines.android)
     testImplementation(libs.junit)

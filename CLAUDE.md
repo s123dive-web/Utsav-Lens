@@ -27,7 +27,8 @@ Stable Diffusion inpainting, experimental) and HD CLOUD (user's own Gemini API k
 | `:core` | Kotlin/JVM | – | models, `AppResult`, dispatchers, atomic file writer, settings model + migrations |
 | `:themes` | Kotlin/JVM | core | theme JSON model, validator, catalogue |
 | `:engine-api` | Kotlin/JVM | core | `TransformEngine`, `ImageEditProvider`, request/progress types |
-| `:segmentation` | Android lib | core | person mask + face boxes |
+| `:platform` | Android lib | core | read-only bitmap decode (EXIF aware), `MediaStoreWriter` (insert-only gallery writer) |
+| `:segmentation` | Android lib | core, platform | person mask + face boxes |
 | `:engine-lite` | Android lib | engine-api, themes, segmentation | Canvas compositing + procedural art |
 | `:engine-local` | Android lib | engine-api, themes, segmentation | on-device SD inpainting |
 | `:engine-cloud` | Android lib | engine-api, themes | cloud engine + providers |

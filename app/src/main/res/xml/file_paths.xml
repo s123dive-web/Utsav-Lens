@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path name="captures" path="captures/" />
+    <cache-path name="previews" path="previews/" />
+    <cache-path name="share" path="share/" />
+    <external-files-path name="outputs" path="." />
+</paths>

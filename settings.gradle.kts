@@ -13,5 +13,5 @@ rootProject.name = "UtsavLens"
 
 include(":core", ":themes", ":engine-api")
 if (!jvmOnly) {
-    include(":segmentation", ":engine-lite", ":engine-local", ":engine-cloud", ":video", ":data", ":app")
+    include(":platform", ":segmentation", ":engine-lite", ":engine-local", ":engine-cloud", ":video", ":data", ":app")
 }

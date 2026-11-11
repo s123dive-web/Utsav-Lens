@@ -1,0 +1,19 @@
+app_name	Utsav Lens	उत्सव लेंस	उत्सव लेन्स
+home_tagline	Festive photos and videos, made on your phone	आपके फ़ोन पर बने उत्सव के फ़ोटो और वीडियो	तुमच्या फोनवर बनलेले सणाचे फोटो आणि व्हिडिओ
+home_pick_photo	Choose photo	फ़ोटो चुनें	फोटो निवडा
+home_take_photo	Take photo	फ़ोटो खींचें	फोटो काढा
+home_pick_video	Choose video	वीडियो चुनें	व्हिडिओ निवडा
+home_record_video	Record video	वीडियो रिकॉर्ड करें	व्हिडिओ रेकॉर्ड करा
+home_history	History	इतिहास	इतिहास
+home_settings	Settings	सेटिंग्स	सेटिंग्ज
+rights_note	Use only photos and videos you have the right to edit.	केवल वही फ़ोटो और वीडियो इस्तेमाल करें जिन्हें संपादित करने का अधिकार आपके पास है।	ज्या फोटो आणि व्हिडिओंचे संपादन करण्याचा अधिकार तुमच्याकडे आहे तेच वापरा.
+back	Back	वापस	मागे
+error_open_media	This file could not be opened.	यह फ़ाइल खोली नहीं जा सकी।	ही फाइल उघडता आली नाही.
+error_no_camera	No camera app is available.	कोई कैमरा ऐप उपलब्ध नहीं है।	कॅमेरा अॅप उपलब्ध नाही.
+themes_title	Choose a theme	थीम चुनें	थीम निवडा
+mask_show	Show mask	मास्क दिखाएँ	मास्क दाखवा
+mask_hide	Hide mask	मास्क छिपाएँ	मास्क लपवा
+mask_no_person	No person found. The theme will be applied to the whole picture.	कोई व्यक्ति नहीं मिला। थीम पूरी तस्वीर पर लगाई जाएगी।	कोणतीही व्यक्ती आढळली नाही. थीम संपूर्ण चित्रावर लागू केली जाईल.
+mask_failed	Person detection is unavailable on this device. The theme will be applied to the whole picture.	इस डिवाइस पर व्यक्ति की पहचान उपलब्ध नहीं है। थीम पूरी तस्वीर पर लगाई जाएगी।	या डिव्हाइसवर व्यक्ती ओळख उपलब्ध नाही. थीम संपूर्ण चित्रावर लागू केली जाईल.
+mask_person_found	Person detected. Faces found: %1$d	व्यक्ति मिला। चेहरे: %1$d	व्यक्ती आढळली. चेहरे: %1$d
+loading	Loading…	लोड हो रहा है…	लोड होत आहे…

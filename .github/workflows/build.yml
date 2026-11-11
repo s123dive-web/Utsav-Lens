@@ -109,3 +109,15 @@ jobs:
           if [ -n "$(git status --porcelain data/schemas)" ]; then
             find data/schemas -name '*.json' | while read g; do echo "=== SCHEMA $g"; tr -d '\n' < "$g" | sed 's/  */ /g' | cut -c1-7000; echo; done
           fi
+
+      - name: APK facts (install compatibility)
+        if: always()
+        run: |
+          bt=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+          apk=$(ls dist/*.apk | head -1)
+          echo "===== APK FACTS ====="
+          "$bt/aapt2" dump badging "$apk" | grep -E "^package|sdkVersion|targetSdkVersion|native-code|testOnly|uses-feature|application-debuggable|uses-library" | cut -c1-300
+          "$bt/aapt2" dump xmltree "$apk" --file AndroidManifest.xml | grep -iE "testOnly|required|uses-native|uses-library|uses-sdk|minSdk|extractNativeLibs" | cut -c1-200 | head -20
+          "$bt/apksigner" verify --verbose --print-certs "$apk" 2>&1 | grep -E "Verified|Verifies|scheme|ERROR|WARNING|DN:" | cut -c1-200 | head -14
+          unzip -l "$apk" | grep -E "lib/[^/]+/" | awk '{print $4}' | cut -d/ -f2 | sort | uniq -c
+          echo "===== END ====="

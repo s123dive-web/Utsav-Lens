@@ -15,6 +15,9 @@ import javax.inject.Inject
 class UtsavApp : Application() {
     @Inject lateinit var jobs: JobController
 
+    /** Injected eagerly so the video job runners are registered before any job can be retried. */
+    @Inject lateinit var videoJobs: com.utsavlens.app.jobs.VideoJobs
+
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     override fun onCreate() {

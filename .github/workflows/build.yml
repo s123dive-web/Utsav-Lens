@@ -49,6 +49,8 @@ jobs:
           for a in com/google/mediapipe/tasks-vision androidx/media3/media3-transformer androidx/room/room-runtime; do
             echo "$a: $(curl -fsS https://dl.google.com/dl/android/maven2/$a/maven-metadata.xml | grep -oE '<version>[^<]+' | sed 's/<version>//' | tail -4 | tr '\n' ' ')" || true
           done
+          echo "--- Gemini model IDs on the official deprecations page"
+          curl -fsSL https://ai.google.dev/gemini-api/docs/deprecations.md.txt 2>/dev/null | grep -E 'gemini-[a-z0-9.-]*(image|flash)' | grep -vi 'tts\|live\|audio\|embedding' | cut -c1-230 | head -40 || echo "(page not reachable)"
 
       - name: Unit tests
         run: |
@@ -59,16 +61,6 @@ jobs:
         run: |
           set -o pipefail
           ./gradlew assembleDebug --stacktrace --console=plain 2>&1 | tee build.log
-
-      - name: Exported Room schema changed (commit the new file)
-        if: always()
-        run: |
-          if [ -n "$(git status --porcelain data/schemas)" ]; then
-            for f in $(git status --porcelain data/schemas | awk '{print $2}'); do
-              [ -d "$f" ] && f="$(find "$f" -name '*.json')"
-              for g in $f; do echo "=== SCHEMA $g"; tr -d '\n' < "$g" | sed 's/  */ /g'; echo; done
-            done
-          fi
 
       - name: Error summary
         if: failure()
@@ -107,3 +99,11 @@ jobs:
             Debug APK built by GitHub Actions from `${{ github.ref_name }}` at `${{ github.sha }}`.
             Debug-signed with a per-run key: uninstall the previous build before installing this one.
           files: dist/*.apk
+
+      - name: Schema status (empty = committed schema matches the generated one)
+        if: always()
+        run: |
+          git status --porcelain data/schemas | head -3
+          if [ -n "$(git status --porcelain data/schemas)" ]; then
+            find data/schemas -name '*.json' | while read g; do echo "=== SCHEMA $g"; tr -d '\n' < "$g" | sed 's/  */ /g' | cut -c1-7000; echo; done
+          fi

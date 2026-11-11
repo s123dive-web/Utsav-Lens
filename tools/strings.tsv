@@ -75,10 +75,10 @@ err_server	The provider had a temporary problem.	प्रदाता में
 err_bad_response	The provider sent an unexpected answer.	प्रदाता से अप्रत्याशित उत्तर मिला।	प्रदात्याकडून अनपेक्षित उत्तर आले.
 err_oom	Not enough memory for this file. Try a smaller picture.	इस फ़ाइल के लिए मेमोरी कम है। छोटी तस्वीर आज़माएँ।	या फाइलसाठी मेमरी अपुरी आहे. लहान चित्र वापरून पहा.
 err_unsupported	This is not supported on this device.	यह इस डिवाइस पर समर्थित नहीं है।	हे या डिव्हाइसवर समर्थित नाही.
-err_not_ready	This engine is not ready yet.	यह इंजन अभी तैयार नहीं है।	हे इंजिन अजून तयार नाही.
+err_not_ready	This engine is not ready yet. Check its setup in Settings.	यह इंजन अभी तैयार नहीं है। सेटिंग्स में इसका सेटअप जाँचें।	हे इंजिन अजून तयार नाही. सेटिंग्जमध्ये त्याचे सेटअप तपासा.
 err_io	The file could not be read or saved.	फ़ाइल पढ़ी या सहेजी नहीं जा सकी।	फाइल वाचता किंवा सेव्ह करता आली नाही.
 err_interrupted	The app was closed while this was running.	यह चलते समय ऐप बंद हो गया।	हे चालू असताना अॅप बंद झाले.
-err_invalid	This request could not be understood.	यह अनुरोध समझा नहीं जा सका।	ही विनंती समजली नाही.
+err_invalid	The request was not accepted. For HD Cloud, check the model ID and base URL in Settings.	अनुरोध स्वीकार नहीं हुआ। HD क्लाउड के लिए सेटिंग्स में मॉडल ID और बेस URL जाँचें।	विनंती स्वीकारली गेली नाही. HD क्लाउडसाठी सेटिंग्जमध्ये मॉडेल ID आणि बेस URL तपासा.
 err_unknown	An unexpected error occurred.	एक अप्रत्याशित त्रुटि हुई।	अनपेक्षित त्रुटी आली.
 result_title	Result	परिणाम	निकाल
 result_saved	Saved in your gallery (UtsavLens album)	आपकी गैलरी में सहेजा गया (UtsavLens एल्बम)	तुमच्या गॅलरीत सेव्ह केले (UtsavLens अल्बम)
@@ -117,3 +117,29 @@ settings_clear_cache	Clear temporary files	अस्थायी फ़ाइल
 settings_about	About	परिचय	माहिती
 settings_privacy	No account, no ads, no analytics. Your photos stay on this phone unless you choose HD Cloud, which sends them only to the provider whose key you entered.	कोई खाता नहीं, कोई विज्ञापन नहीं, कोई एनालिटिक्स नहीं। आपकी फ़ोटो इसी फ़ोन पर रहती हैं, जब तक आप HD क्लाउड न चुनें, जो उन्हें केवल उसी प्रदाता को भेजता है जिसकी कुंजी आपने डाली है।	खाते नाही, जाहिराती नाहीत, अॅनालिटिक्स नाही. तुम्ही HD क्लाउड निवडल्याशिवाय तुमचे फोटो याच फोनवर राहतात; HD क्लाउड ते फक्त त्या प्रदात्याकडे पाठवते ज्याची की तुम्ही दिली आहे.
 settings_version	Version %1$s	संस्करण %1$s	आवृत्ती %1$s
+slideshow_title	Festive slideshow	उत्सव स्लाइड शो	सणाचा स्लाइड शो
+slideshow_pick	Photos selected: %1$d of %2$d. Tap photos below to add or remove.	चुनी गई फ़ोटो: %2$d में से %1$d। जोड़ने या हटाने के लिए नीचे फ़ोटो पर टैप करें।	निवडलेले फोटो: %2$d पैकी %1$d. जोडण्यासाठी किंवा काढण्यासाठी खालील फोटोंवर टॅप करा.
+slideshow_seconds	Seconds per photo: %1$.1f	प्रति फ़ोटो सेकंड: %1$.1f	प्रति फोटो सेकंद: %1$.1f
+slideshow_add_audio	Add audio from this device	इस डिवाइस से ऑडियो जोड़ें	या डिव्हाइसवरून ऑडिओ जोडा
+slideshow_change_audio	Change audio	ऑडियो बदलें	ऑडिओ बदला
+slideshow_remove_audio	Remove	हटाएँ	काढा
+slideshow_audio_note	Audio is optional. Use only audio you have the right to use.	ऑडियो वैकल्पिक है। केवल वही ऑडियो इस्तेमाल करें जिसके उपयोग का अधिकार आपके पास है।	ऑडिओ ऐच्छिक आहे. ज्या ऑडिओच्या वापराचा अधिकार तुमच्याकडे आहे तोच वापरा.
+slideshow_create	Create video	वीडियो बनाएँ	व्हिडिओ तयार करा
+slideshow_empty	Create some festive photos first; they will appear here.	पहले कुछ उत्सव फ़ोटो बनाएँ; वे यहाँ दिखेंगी।	आधी काही सणाचे फोटो तयार करा; ते येथे दिसतील.
+cloud_title	HD Cloud	HD क्लाउड	HD क्लाउड
+cloud_provider	Provider: %1$s	प्रदाता: %1$s	प्रदाता: %1$s
+cloud_key_saved	An API key is saved (encrypted on this device).	API कुंजी सहेजी गई है (इस डिवाइस पर एन्क्रिप्टेड)।	API की सेव्ह केली आहे (या डिव्हाइसवर एन्क्रिप्टेड).
+cloud_key_missing	No API key saved.	कोई API कुंजी सहेजी नहीं गई।	API की सेव्ह केलेली नाही.
+cloud_key_label	Your API key	आपकी API कुंजी	तुमची API की
+cloud_key_save	Save key	कुंजी सहेजें	की सेव्ह करा
+cloud_key_test	Test key	कुंजी जाँचें	की तपासा
+cloud_key_testing	Testing…	जाँच हो रही है…	तपासत आहे…
+cloud_key_ok	The key works with this model.	कुंजी इस मॉडल के साथ काम करती है।	की या मॉडेलसोबत काम करते.
+cloud_key_remove	Remove key	कुंजी हटाएँ	की काढा
+cloud_get_key	Where to get a key	कुंजी कहाँ से मिलेगी	की कुठे मिळेल
+cloud_requests_today	Requests sent today: %1$d	आज भेजे गए अनुरोध: %1$d	आज पाठवलेल्या विनंत्या: %1$d
+cloud_model_id	Model ID	मॉडल ID	मॉडेल ID
+cloud_base_url	Base URL (https)	बेस URL (https)	बेस URL (https)
+cloud_apply	Apply	लागू करें	लागू करा
+cloud_reset	Reset to default	डिफ़ॉल्ट पर रीसेट करें	डीफॉल्टवर रीसेट करा
+cloud_note	Your key is stored only on this phone, encrypted, and is never included in backups or logs. Usage is billed by the provider to your own account.	आपकी कुंजी केवल इसी फ़ोन पर एन्क्रिप्टेड रूप में रहती है और बैकअप या लॉग में कभी शामिल नहीं होती। उपयोग का शुल्क प्रदाता आपके अपने खाते से लेता है।	तुमची की फक्त याच फोनवर एन्क्रिप्टेड स्वरूपात राहते आणि बॅकअप किंवा लॉगमध्ये कधीही समाविष्ट होत नाही. वापराचे शुल्क प्रदाता तुमच्या स्वतःच्या खात्यातून घेतो.

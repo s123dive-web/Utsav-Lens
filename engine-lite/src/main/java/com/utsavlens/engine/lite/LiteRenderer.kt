@@ -144,6 +144,16 @@ object LiteRenderer {
         }
     }
 
+    /** Lighter variant for slideshows of already-themed photos: animated particles and the greeting only. */
+    fun drawSlideshowDecorations(canvas: Canvas, w: Int, h: Int, theme: Theme, seed: Long, t: Float, greeting: String?, greetingOpacity: Float) {
+        val pal = Pal.of(theme.palette)
+        val type = if (theme.lite.particles.type == com.utsavlens.themes.ParticleType.NONE) com.utsavlens.themes.ParticleType.SPARKLE else theme.lite.particles.type
+        Particles.draw(ArtScope(canvas, w.toFloat(), h.toFloat(), pal, seed, t, 0.9f), type, theme.lite.particles.density.coerceAtLeast(0.4f))
+        if (!greeting.isNullOrBlank() && greetingOpacity > 0f) {
+            GreetingPainter.draw(canvas, w.toFloat(), h.toFloat(), greeting, pal, minOf(w, h) * 0.06f, greetingOpacity)
+        }
+    }
+
     private fun drawFront(canvas: Canvas, w: Float, h: Float, theme: Theme, pal: Pal, seed: Long, t: Float, decoOpacity: Float, strength: Float, faces: List<RectF>) {
         theme.lite.overlays.forEachIndexed { i, spec ->
             if (Overlays.isFront(spec)) Overlays.draw(ArtScope(canvas, w, h, pal, seed, t, spec.opacity * decoOpacity), spec, i)

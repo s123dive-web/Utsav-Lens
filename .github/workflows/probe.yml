@@ -1,0 +1,21 @@
+name: Probe model hosting (Local AI spike)
+
+# One-off research helper for the Phase 8 feasibility spike: lists the files, sizes and SHA-256
+# checksums of candidate ONNX model repositories so the in-app download manifest can be pinned.
+on:
+  push:
+    branches: [claude/utsav-lens-phase-0-ufwxd1]
+    paths: ['tools/probe/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - name: Run probe
+        run: bash tools/probe/probe.sh 2>&1 | cut -c1-400 | head -150

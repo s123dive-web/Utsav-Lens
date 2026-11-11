@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.utsavlens.app.LocaleSupport
 import com.utsavlens.app.jobs.EngineRegistry
 import com.utsavlens.app.jobs.JobController
+import com.utsavlens.app.jobs.VideoJobs
 import com.utsavlens.app.nav.Routes
 import com.utsavlens.app.repo.ThemeRepository
 import com.utsavlens.core.AppLanguage
@@ -75,6 +76,7 @@ class OptionsViewModel @Inject constructor(
     private val engines: EngineRegistry,
     private val settings: SettingsStore,
     private val jobs: JobController,
+    private val videoJobs: VideoJobs,
     private val savedState: SavedStateHandle,
 ) : ViewModel() {
     val sourceUri: String = savedState.get<String>(Routes.ARG_SRC).orEmpty()
@@ -168,7 +170,12 @@ class OptionsViewModel @Inject constructor(
                 s.copy(lastOptions = StoredOptions(d.keepBackground, d.changeOutfit, d.strength, d.aspect.key, d.variations))
             }
             val jobId = if (isVideo) {
-                videoStarter?.invoke(sourceUri, theme.id, options) ?: ""
+                videoJobs.startOverlay(
+                    com.utsavlens.video.VideoOverlaySpec(
+                        sourceUri = sourceUri, themeId = theme.id, strength = options.strength,
+                        greeting = options.greeting?.text, seed = Random.nextLong(1, Long.MAX_VALUE / 2),
+                    ),
+                )
             } else {
                 jobs.submitTransform(
                     d.engineId,
@@ -179,9 +186,6 @@ class OptionsViewModel @Inject constructor(
             if (jobId.isNotEmpty()) onStarted(jobId)
         }
     }
-
-    /** Set by the video feature (Phase 6): starts a video-overlay export job and returns its id. */
-    var videoStarter: (suspend (sourceUri: String, themeId: String, options: TransformOptions) -> String)? = null
 
     companion object {
         private const val KEY_DRAFT = "draft"

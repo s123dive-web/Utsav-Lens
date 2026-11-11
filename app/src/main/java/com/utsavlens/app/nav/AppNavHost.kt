@@ -12,8 +12,10 @@ import com.utsavlens.app.ui.home.HomeScreen
 import com.utsavlens.app.ui.options.OptionsScreen
 import com.utsavlens.app.ui.progress.ProgressScreen
 import com.utsavlens.app.ui.result.ResultScreen
+import com.utsavlens.app.ui.settings.CloudSettingsSection
 import com.utsavlens.app.ui.settings.SettingsScreen
 import com.utsavlens.app.ui.themes.ThemesScreen
+import com.utsavlens.app.ui.video.SlideshowScreen
 
 private fun NavHostController.goHome() {
     navigate(Routes.HOME) { popUpTo(Routes.HOME) { inclusive = true } }
@@ -58,14 +60,17 @@ fun AppNavHost() {
             ResultScreen(
                 onBack = { nav.popBackStack() },
                 onHome = { nav.goHome() },
-                onMakeVideo = {},
+                onMakeVideo = { batchId -> nav.navigate(Routes.slideshow(batchId)) },
             )
+        }
+        composable(Routes.SLIDESHOW, arguments = listOf(stringArg(Routes.ARG_BATCH, ""))) {
+            SlideshowScreen(onBack = { nav.popBackStack() }, onStarted = { jobId -> nav.navigate(Routes.progress(jobId)) })
         }
         composable(Routes.HISTORY) {
             HistoryScreen(onBack = { nav.popBackStack() }, onOpen = { batchId -> nav.navigate(Routes.result(batchId)) })
         }
         composable(Routes.SETTINGS) {
-            SettingsScreen(onBack = { nav.popBackStack() })
+            SettingsScreen(onBack = { nav.popBackStack() }, extraSections = { CloudSettingsSection() })
         }
     }
 }

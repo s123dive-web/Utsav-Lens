@@ -102,4 +102,22 @@
     <string name="unsupported_chipset">प्रोसेसर समर्थित नहीं (%1$s)</string>
     <string name="unsupported_android">Android संस्करण बहुत पुराना है</string>
     <string name="unsupported_storage">पर्याप्त खाली स्टोरेज नहीं (%1$s)</string>
+    <string name="history_select">चुनें</string>
+    <string name="history_empty">अभी यहाँ कुछ नहीं है। आपकी रचनाएँ यहाँ दिखेंगी।</string>
+    <string name="history_delete_title">इतिहास से हटाएँ?</string>
+    <string name="history_delete_body">आपकी मूल फ़ोटो और वीडियो कभी नहीं हटाए जाते।</string>
+    <string name="history_delete_files">बनाई गई फ़ाइलें गैलरी से भी हटाएँ</string>
+    <string name="settings_language">भाषा</string>
+    <string name="lang_system">सिस्टम डिफ़ॉल्ट</string>
+    <string name="settings_default_engine">डिफ़ॉल्ट इंजन</string>
+    <string name="settings_debug">डीबग</string>
+    <string name="settings_mask_debug">थीम स्क्रीन पर \"मास्क दिखाएँ\" बटन दिखाएँ</string>
+    <string name="settings_storage">स्टोरेज</string>
+    <string name="settings_history_count">इतिहास प्रविष्टियाँ: %1$d</string>
+    <string name="settings_clear_history">इतिहास साफ़ करें</string>
+    <string name="settings_cache_size">अस्थायी फ़ाइलें: %1$s</string>
+    <string name="settings_clear_cache">अस्थायी फ़ाइलें साफ़ करें</string>
+    <string name="settings_about">परिचय</string>
+    <string name="settings_privacy">कोई खाता नहीं, कोई विज्ञापन नहीं, कोई एनालिटिक्स नहीं। आपकी फ़ोटो इसी फ़ोन पर रहती हैं, जब तक आप HD क्लाउड न चुनें, जो उन्हें केवल उसी प्रदाता को भेजता है जिसकी कुंजी आपने डाली है।</string>
+    <string name="settings_version">संस्करण %1$s</string>
 </resources>

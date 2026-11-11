@@ -102,4 +102,22 @@
     <string name="unsupported_chipset">प्रोसेसर समर्थित नाही (%1$s)</string>
     <string name="unsupported_android">Android आवृत्ती खूप जुनी आहे</string>
     <string name="unsupported_storage">पुरेसे मोकळे स्टोरेज नाही (%1$s)</string>
+    <string name="history_select">निवडा</string>
+    <string name="history_empty">अजून येथे काही नाही. तुमच्या निर्मिती येथे दिसतील.</string>
+    <string name="history_delete_title">इतिहासातून हटवायचे?</string>
+    <string name="history_delete_body">तुमचे मूळ फोटो आणि व्हिडिओ कधीही हटवले जात नाहीत.</string>
+    <string name="history_delete_files">तयार केलेल्या फाइल्स गॅलरीतूनही हटवा</string>
+    <string name="settings_language">भाषा</string>
+    <string name="lang_system">सिस्टम डीफॉल्ट</string>
+    <string name="settings_default_engine">डीफॉल्ट इंजिन</string>
+    <string name="settings_debug">डीबग</string>
+    <string name="settings_mask_debug">थीम स्क्रीनवर \"मास्क दाखवा\" बटण दाखवा</string>
+    <string name="settings_storage">स्टोरेज</string>
+    <string name="settings_history_count">इतिहास नोंदी: %1$d</string>
+    <string name="settings_clear_history">इतिहास साफ करा</string>
+    <string name="settings_cache_size">तात्पुरत्या फाइल्स: %1$s</string>
+    <string name="settings_clear_cache">तात्पुरत्या फाइल्स साफ करा</string>
+    <string name="settings_about">माहिती</string>
+    <string name="settings_privacy">खाते नाही, जाहिराती नाहीत, अॅनालिटिक्स नाही. तुम्ही HD क्लाउड निवडल्याशिवाय तुमचे फोटो याच फोनवर राहतात; HD क्लाउड ते फक्त त्या प्रदात्याकडे पाठवते ज्याची की तुम्ही दिली आहे.</string>
+    <string name="settings_version">आवृत्ती %1$s</string>
 </resources>

@@ -15,6 +15,9 @@ interface HistoryDao {
     @Query("SELECT * FROM history ORDER BY created_at DESC, id DESC")
     fun observeAll(): Flow<List<HistoryEntity>>
 
+    @Query("SELECT * FROM history ORDER BY created_at DESC, id DESC")
+    suspend fun all(): List<HistoryEntity>
+
     @Query("SELECT * FROM history WHERE batch_id = :batchId ORDER BY id ASC")
     suspend fun byBatch(batchId: String): List<HistoryEntity>
 

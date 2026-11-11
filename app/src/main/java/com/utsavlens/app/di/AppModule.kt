@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.utsavlens.app.jobs.EngineRegistry
 import com.utsavlens.app.jobs.JobController
+import com.utsavlens.app.repo.HistoryRepository
 import com.utsavlens.app.repo.ThemeRepository
 import com.utsavlens.core.AppLogger
 import com.utsavlens.core.DefaultDispatchers
@@ -65,6 +66,10 @@ object AppModule {
         @ApplicationContext context: Context, db: AppDatabase, engines: EngineRegistry,
         d: DispatcherProvider, logger: AppLogger,
     ): JobController = JobController(context, db, engines, d, logger)
+
+    @Provides @Singleton
+    fun historyRepository(db: AppDatabase, writer: MediaStoreWriter, d: DispatcherProvider): HistoryRepository =
+        HistoryRepository(db, writer, d)
 
     fun settingsFile(context: Context): File = File(File(context.filesDir, "datastore"), "settings.json")
 }

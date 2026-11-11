@@ -7,10 +7,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.utsavlens.app.ui.history.HistoryScreen
 import com.utsavlens.app.ui.home.HomeScreen
 import com.utsavlens.app.ui.options.OptionsScreen
 import com.utsavlens.app.ui.progress.ProgressScreen
 import com.utsavlens.app.ui.result.ResultScreen
+import com.utsavlens.app.ui.settings.SettingsScreen
 import com.utsavlens.app.ui.themes.ThemesScreen
 
 private fun NavHostController.goHome() {
@@ -25,8 +27,8 @@ fun AppNavHost() {
         composable(Routes.HOME) {
             HomeScreen(
                 onMediaChosen = { uri, kind -> nav.navigate(Routes.themes(uri, kind)) },
-                onHistory = {},
-                onSettings = {},
+                onHistory = { nav.navigate(Routes.HISTORY) },
+                onSettings = { nav.navigate(Routes.SETTINGS) },
             )
         }
         composable(Routes.THEMES, arguments = listOf(stringArg(Routes.ARG_SRC, ""), stringArg(Routes.ARG_KIND, Routes.KIND_PHOTO))) {
@@ -42,7 +44,7 @@ fun AppNavHost() {
             OptionsScreen(
                 onBack = { nav.popBackStack() },
                 onStarted = { jobId -> nav.navigate(Routes.progress(jobId)) },
-                onOpenSettings = {},
+                onOpenSettings = { nav.navigate(Routes.SETTINGS) },
             )
         }
         composable(Routes.PROGRESS, arguments = listOf(stringArg(Routes.ARG_JOB, ""))) {
@@ -58,6 +60,12 @@ fun AppNavHost() {
                 onHome = { nav.goHome() },
                 onMakeVideo = {},
             )
+        }
+        composable(Routes.HISTORY) {
+            HistoryScreen(onBack = { nav.popBackStack() }, onOpen = { batchId -> nav.navigate(Routes.result(batchId)) })
+        }
+        composable(Routes.SETTINGS) {
+            SettingsScreen(onBack = { nav.popBackStack() })
         }
     }
 }

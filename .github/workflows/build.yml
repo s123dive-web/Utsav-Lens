@@ -53,7 +53,7 @@ jobs:
       - name: Unit tests
         run: |
           set -o pipefail
-          ./gradlew test --stacktrace --console=plain 2>&1 | tee test.log
+          ./gradlew test --continue --stacktrace --console=plain 2>&1 | tee test.log
 
       - name: Assemble debug APK
         run: |
@@ -66,7 +66,7 @@ jobs:
           if [ -n "$(git status --porcelain data/schemas)" ]; then
             for f in $(git status --porcelain data/schemas | awk '{print $2}'); do
               [ -d "$f" ] && f="$(find "$f" -name '*.json')"
-              for g in $f; do echo "=== SCHEMA $g"; tr -d ' \n' < "$g"; echo; done
+              for g in $f; do echo "=== SCHEMA $g"; tr -d '\n' < "$g" | sed 's/  */ /g'; echo; done
             done
           fi
 

@@ -102,4 +102,22 @@
     <string name="unsupported_chipset">processor not supported (%1$s)</string>
     <string name="unsupported_android">Android version too old</string>
     <string name="unsupported_storage">not enough free storage (%1$s)</string>
+    <string name="history_select">Select</string>
+    <string name="history_empty">Nothing here yet. Your creations will appear here.</string>
+    <string name="history_delete_title">Delete from history?</string>
+    <string name="history_delete_body">Your original photos and videos are never deleted.</string>
+    <string name="history_delete_files">Also delete the created files from the gallery</string>
+    <string name="settings_language">Language</string>
+    <string name="lang_system">System default</string>
+    <string name="settings_default_engine">Default engine</string>
+    <string name="settings_debug">Debug</string>
+    <string name="settings_mask_debug">Show the \"Show mask\" button on the theme screen</string>
+    <string name="settings_storage">Storage</string>
+    <string name="settings_history_count">History entries: %1$d</string>
+    <string name="settings_clear_history">Clear history</string>
+    <string name="settings_cache_size">Temporary files: %1$s</string>
+    <string name="settings_clear_cache">Clear temporary files</string>
+    <string name="settings_about">About</string>
+    <string name="settings_privacy">No account, no ads, no analytics. Your photos stay on this phone unless you choose HD Cloud, which sends them only to the provider whose key you entered.</string>
+    <string name="settings_version">Version %1$s</string>
 </resources>

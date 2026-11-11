@@ -13,8 +13,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    // Exported Room schemas double as test assets for MigrationTestHelper.
-    sourceSets.getByName("test").assets.srcDir("$projectDir/schemas")
     testOptions { unitTests { isIncludeAndroidResources = true } }
 }
 
@@ -26,17 +24,10 @@ dependencies {
     api(libs.room.runtime)
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
-    testImplementation(libs.room.testing)
     testImplementation(libs.robolectric)
     testImplementation(libs.androidx.test.core)
     testImplementation(libs.androidx.test.ext.junit)
     testImplementation(libs.junit)
     testImplementation(libs.truth)
     testImplementation(libs.coroutines.test)
-}
-
-// The exported schema is produced by KSP; unit-test asset merging must see it.
-tasks.configureEach {
-    val variant = Regex("merge(\\w+)UnitTestAssets").matchEntire(name)?.groupValues?.get(1)
-    if (variant != null) dependsOn("ksp${variant}Kotlin")
 }

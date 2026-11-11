@@ -99,3 +99,21 @@ unsupported_ram	needs more memory (%1$s)	अधिक मेमोरी चा�
 unsupported_chipset	processor not supported (%1$s)	प्रोसेसर समर्थित नहीं (%1$s)	प्रोसेसर समर्थित नाही (%1$s)
 unsupported_android	Android version too old	Android संस्करण बहुत पुराना है	Android आवृत्ती खूप जुनी आहे
 unsupported_storage	not enough free storage (%1$s)	पर्याप्त खाली स्टोरेज नहीं (%1$s)	पुरेसे मोकळे स्टोरेज नाही (%1$s)
+history_select	Select	चुनें	निवडा
+history_empty	Nothing here yet. Your creations will appear here.	अभी यहाँ कुछ नहीं है। आपकी रचनाएँ यहाँ दिखेंगी।	अजून येथे काही नाही. तुमच्या निर्मिती येथे दिसतील.
+history_delete_title	Delete from history?	इतिहास से हटाएँ?	इतिहासातून हटवायचे?
+history_delete_body	Your original photos and videos are never deleted.	आपकी मूल फ़ोटो और वीडियो कभी नहीं हटाए जाते।	तुमचे मूळ फोटो आणि व्हिडिओ कधीही हटवले जात नाहीत.
+history_delete_files	Also delete the created files from the gallery	बनाई गई फ़ाइलें गैलरी से भी हटाएँ	तयार केलेल्या फाइल्स गॅलरीतूनही हटवा
+settings_language	Language	भाषा	भाषा
+lang_system	System default	सिस्टम डिफ़ॉल्ट	सिस्टम डीफॉल्ट
+settings_default_engine	Default engine	डिफ़ॉल्ट इंजन	डीफॉल्ट इंजिन
+settings_debug	Debug	डीबग	डीबग
+settings_mask_debug	Show the "Show mask" button on the theme screen	थीम स्क्रीन पर "मास्क दिखाएँ" बटन दिखाएँ	थीम स्क्रीनवर "मास्क दाखवा" बटण दाखवा
+settings_storage	Storage	स्टोरेज	स्टोरेज
+settings_history_count	History entries: %1$d	इतिहास प्रविष्टियाँ: %1$d	इतिहास नोंदी: %1$d
+settings_clear_history	Clear history	इतिहास साफ़ करें	इतिहास साफ करा
+settings_cache_size	Temporary files: %1$s	अस्थायी फ़ाइलें: %1$s	तात्पुरत्या फाइल्स: %1$s
+settings_clear_cache	Clear temporary files	अस्थायी फ़ाइलें साफ़ करें	तात्पुरत्या फाइल्स साफ करा
+settings_about	About	परिचय	माहिती
+settings_privacy	No account, no ads, no analytics. Your photos stay on this phone unless you choose HD Cloud, which sends them only to the provider whose key you entered.	कोई खाता नहीं, कोई विज्ञापन नहीं, कोई एनालिटिक्स नहीं। आपकी फ़ोटो इसी फ़ोन पर रहती हैं, जब तक आप HD क्लाउड न चुनें, जो उन्हें केवल उसी प्रदाता को भेजता है जिसकी कुंजी आपने डाली है।	खाते नाही, जाहिराती नाहीत, अॅनालिटिक्स नाही. तुम्ही HD क्लाउड निवडल्याशिवाय तुमचे फोटो याच फोनवर राहतात; HD क्लाउड ते फक्त त्या प्रदात्याकडे पाठवते ज्याची की तुम्ही दिली आहे.
+settings_version	Version %1$s	संस्करण %1$s	आवृत्ती %1$s

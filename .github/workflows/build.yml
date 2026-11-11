@@ -22,17 +22,15 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Set up JDK 17
+      - name: Set up JDK 17 (with Gradle cache)
         uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: '17'
+          cache: gradle
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
-
-      - name: Set up Gradle (with cache)
-        uses: gradle/actions/setup-gradle@v6
 
       - name: Repo hygiene (no secrets, wrapper executable)
         run: |
@@ -62,18 +60,28 @@ jobs:
           set -o pipefail
           ./gradlew assembleDebug --stacktrace --console=plain 2>&1 | tee build.log
 
-      - name: Show exported Room schemas
+      - name: Exported Room schema changed (commit the new file)
         if: always()
         run: |
-          for f in $(find data/schemas -name '*.json' 2>/dev/null); do echo "=== $f"; cat "$f"; echo; done
+          if [ -n "$(git status --porcelain data/schemas)" ]; then
+            for f in $(git status --porcelain data/schemas | awk '{print $2}'); do
+              [ -d "$f" ] && f="$(find "$f" -name '*.json')"
+              for g in $f; do echo "=== SCHEMA $g"; cat "$g"; echo; done
+            done
+          fi
 
       - name: Error summary
         if: failure()
         run: |
           echo "===== ERROR SUMMARY ====="
-          cat test.log build.log 2>/dev/null | grep -nE '^e: |^w: .*error|error:|FAILED|What went wrong|Caused by|Could not|Unresolved|AAPT|> Task .* FAILED' -A4 | head -300 || true
+          cat test.log build.log 2>/dev/null \
+            | grep -E '^e: |error:|What went wrong|Could not (resolve|find|get)|Unresolved reference|AAPT|Execution failed|> Task .* FAILED|^> ' \
+            | sed -e "s#file://$GITHUB_WORKSPACE/##" -e "s#$GITHUB_WORKSPACE/##" | cut -c1-320 | awk '!seen[$0]++' | head -70 || true
           echo "===== FAILED TESTS ====="
-          grep -rlE '<(failure|error)' --include='*.xml' . 2>/dev/null | head -20 | while read f; do echo "--- $f"; grep -E -A12 '<(failure|error)' "$f" | head -60; done || true
+          grep -rlE '<(failure|error) ' --include='TEST-*.xml' . 2>/dev/null | head -8 | while read f; do
+            echo "--- $f"; grep -E -B1 -A7 '<(failure|error) ' "$f" | cut -c1-320 | head -30
+          done || true
+          echo "===== END ====="
 
       - name: Rename APK
         run: |

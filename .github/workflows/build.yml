@@ -1,0 +1,90 @@
+name: Build debug APK
+
+on:
+  push:
+    branches:
+      - main
+      # Development branch: lets every phase be verified in Actions before it is merged.
+      - claude/utsav-lens-phase-0-ufwxd1
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed to create the Release that carries the APK
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Set up Gradle (with cache)
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Repo hygiene (no secrets, wrapper executable)
+        run: |
+          set -e
+          test -x gradlew
+          test -f gradle/wrapper/gradle-wrapper.jar
+          if git ls-files | grep -E '(^|/)local\.properties$|\.jks$|\.keystore$|\.p12$|\.pem$'; then
+            echo "Forbidden file committed"; exit 1
+          fi
+          if git grep -nE 'AIza[0-9A-Za-z_-]{35}|sk-[A-Za-z0-9]{32,}' -- . ; then
+            echo "Possible API key committed"; exit 1
+          fi
+
+      - name: Unit tests
+        run: |
+          set -o pipefail
+          ./gradlew test --stacktrace --console=plain 2>&1 | tee test.log
+
+      - name: Assemble debug APK
+        run: |
+          set -o pipefail
+          ./gradlew assembleDebug --stacktrace --console=plain 2>&1 | tee build.log
+
+      - name: Error summary
+        if: failure()
+        run: |
+          echo "===== ERROR SUMMARY ====="
+          cat test.log build.log 2>/dev/null | grep -nE '^e: |^w: .*error|error:|FAILED|What went wrong|Caused by|Could not|Unresolved|AAPT|> Task .* FAILED' -A4 | head -300 || true
+          echo "===== FAILED TESTS ====="
+          grep -rlE '<(failure|error)' --include='*.xml' . 2>/dev/null | head -20 | while read f; do echo "--- $f"; grep -E -A12 '<(failure|error)' "$f" | head -60; done || true
+
+      - name: Rename APK
+        run: |
+          mkdir -p dist
+          cp app/build/outputs/apk/debug/app-debug.apk "dist/UtsavLens-debug-${{ github.run_number }}.apk"
+          ls -l dist
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: UtsavLens-debug-${{ github.run_number }}
+          path: dist/*.apk
+          if-no-files-found: error
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Utsav Lens debug build ${{ github.run_number }}
+          target_commitish: ${{ github.sha }}
+          prerelease: ${{ github.ref != 'refs/heads/main' }}
+          body: |
+            Debug APK built by GitHub Actions from `${{ github.ref_name }}` at `${{ github.sha }}`.
+            Debug-signed with a per-run key: uninstall the previous build before installing this one.
+          files: dist/*.apk

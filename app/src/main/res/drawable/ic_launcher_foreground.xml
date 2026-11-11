@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original artwork drawn for this project: a diya (oil lamp) inside a lens ring. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:pathData="M54,30a24,24 0,1 0,0.01 0z"
+        android:strokeColor="#FFFFD54F" android:strokeWidth="3" android:fillColor="#00000000" />
+    <path android:pathData="M36,56 Q54,78 72,56 Q54,62 36,56z" android:fillColor="#FFFF9933" />
+    <path android:pathData="M54,36 Q46,48 54,56 Q62,48 54,36z" android:fillColor="#FFFFF176" />
+    <path android:pathData="M54,43 Q50,50 54,55 Q58,50 54,43z" android:fillColor="#FFFF6F00" />
+</vector>

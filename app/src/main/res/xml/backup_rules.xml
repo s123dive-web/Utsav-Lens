@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- API keys live in files/secure/ and must never leave the device in a backup. -->
+<full-backup-content>
+    <exclude domain="file" path="secure/" />
+    <exclude domain="file" path="models/" />
+    <exclude domain="file" path="datastore/" />
+</full-backup-content>

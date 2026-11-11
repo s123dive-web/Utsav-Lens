@@ -56,6 +56,11 @@ jobs:
           set -o pipefail
           ./gradlew assembleDebug --stacktrace --console=plain 2>&1 | tee build.log
 
+      - name: Show exported Room schemas
+        if: always()
+        run: |
+          for f in $(find data/schemas -name '*.json' 2>/dev/null); do echo "=== $f"; cat "$f"; echo; done
+
       - name: Error summary
         if: failure()
         run: |

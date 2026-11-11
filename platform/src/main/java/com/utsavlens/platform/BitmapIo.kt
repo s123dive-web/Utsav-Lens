@@ -49,8 +49,9 @@ object BitmapIo {
     private fun decodeOnce(context: Context, uri: Uri, maxEdgePx: Int): Bitmap {
         val resolver = context.contentResolver
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-        resolver.openInputStream(uri)?.use { BitmapFactory.decodeStream(it, null, bounds) }
-            ?: throw IOException("Cannot open image")
+        // With inJustDecodeBounds the decoder returns null by design; only the stream may be missing.
+        val boundsStream = resolver.openInputStream(uri) ?: throw IOException("Cannot open image")
+        boundsStream.use { BitmapFactory.decodeStream(it, null, bounds) }
         if (bounds.outWidth <= 0 || bounds.outHeight <= 0) throw IOException("Not a readable image")
 
         var sample = 1
@@ -59,8 +60,8 @@ object BitmapIo {
             inSampleSize = sample
             inPreferredConfig = Bitmap.Config.ARGB_8888
         }
-        val raw = resolver.openInputStream(uri)?.use { BitmapFactory.decodeStream(it, null, opts) }
-            ?: throw IOException("Cannot decode image")
+        val pixelStream = resolver.openInputStream(uri) ?: throw IOException("Cannot open image")
+        val raw = pixelStream.use { BitmapFactory.decodeStream(it, null, opts) } ?: throw IOException("Cannot decode image")
 
         val orientation = try {
             resolver.openInputStream(uri)?.use {

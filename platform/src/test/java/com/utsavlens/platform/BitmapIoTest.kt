@@ -21,6 +21,13 @@ import java.io.File
 class BitmapIoTest {
     private val context: Context = ApplicationProvider.getApplicationContext()
 
+    /** Robolectric's ContentResolver only opens streams that were registered with it. */
+    private fun uriFor(file: File): Uri {
+        val uri = Uri.fromFile(file)
+        org.robolectric.Shadows.shadowOf(context.contentResolver).registerInputStreamSupplier(uri) { java.io.FileInputStream(file) }
+        return uri
+    }
+
     /** A 40x20 JPEG that claims to be rotated 90 degrees and carries a GPS position. */
     private fun photoWithExif(): File {
         val bitmap = Bitmap.createBitmap(40, 20, Bitmap.Config.ARGB_8888).apply { eraseColor(Color.rgb(200, 80, 40)) }
@@ -40,7 +47,7 @@ class BitmapIoTest {
         val file = photoWithExif()
         val before = Hashing.sha256Hex(file)
         val modified = file.lastModified()
-        val decoded = BitmapIo.decode(context, Uri.fromFile(file), 100)
+        val decoded = BitmapIo.decode(context, uriFor(file), 100)
         assertThat(decoded.width).isEqualTo(20)
         assertThat(decoded.height).isEqualTo(40)
         assertThat(Hashing.sha256Hex(file)).isEqualTo(before)
@@ -48,7 +55,7 @@ class BitmapIoTest {
     }
 
     @Test fun uploadBytesCarryNoExifLocationOrDeviceData() {
-        val decoded = BitmapIo.decode(context, Uri.fromFile(photoWithExif()), 100)
+        val decoded = BitmapIo.decode(context, uriFor(photoWithExif()), 100)
         val bytes = BitmapIo.encodeJpeg(decoded, 90)
         val exif = ExifInterface(ByteArrayInputStream(bytes))
         assertThat(exif.latLong).isNull()
@@ -60,7 +67,7 @@ class BitmapIoTest {
         val big = Bitmap.createBitmap(1600, 1200, Bitmap.Config.ARGB_8888)
         val file = File(context.cacheDir, "big.jpg")
         file.outputStream().use { big.compress(Bitmap.CompressFormat.JPEG, 80, it) }
-        val decoded = BitmapIo.decode(context, Uri.fromFile(file), 400)
+        val decoded = BitmapIo.decode(context, uriFor(file), 400)
         assertThat(maxOf(decoded.width, decoded.height)).isEqualTo(400)
         assertThat(decoded.width.toFloat() / decoded.height).isWithin(0.02f).of(4f / 3f)
     }

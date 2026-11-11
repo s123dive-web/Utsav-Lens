@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "holi",
+  "name": {
+    "en": "Holi",
+    "hi": "होली",
+    "mr": "होळी"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#E91E63",
+    "secondary": "#00BCD4",
+    "accent": "#FFEB3B",
+    "background": "#FFF3E0"
+  },
+  "lite": {
+    "background": {
+      "style": "color_splash",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "color_clouds",
+        "anchor": "full",
+        "scale": 1.0,
+        "opacity": 0.85
+      }
+    ],
+    "border": {
+      "style": "none",
+      "widthPct": 0
+    },
+    "grade": {
+      "warmth": 0.1,
+      "saturation": 1.3,
+      "contrast": 1.05,
+      "vignette": 0.0,
+      "glow": 0.3
+    },
+    "particles": {
+      "type": "color_powder",
+      "density": 0.7
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Holi!",
+      "Colours of joy",
+      "Bura na mano, Holi hai!"
+    ],
+    "hi": [
+      "होली की शुभकामनाएँ!",
+      "रंगों का त्योहार मुबारक",
+      "बुरा न मानो, होली है!"
+    ],
+    "mr": [
+      "होळीच्या शुभेच्छा!",
+      "रंगपंचमीच्या हार्दिक शुभेच्छा",
+      "रंगांचा सण आनंदाचा जावो"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a joyful Holi festival scene: clouds of vivid pink, yellow, blue and green gulal powder in the air, bright daylight, colourful splashes. Photorealistic, energetic, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "a white cotton kurta splashed with bright Holi colours",
+    "recommendedStrength": 0.7
+  }
+}

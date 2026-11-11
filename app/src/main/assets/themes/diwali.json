@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "diwali",
+  "name": {
+    "en": "Diwali",
+    "hi": "दीवाली",
+    "mr": "दिवाळी"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#FF9933",
+    "secondary": "#6A1B9A",
+    "accent": "#FFD54F",
+    "background": "#1A0B2E"
+  },
+  "lite": {
+    "background": {
+      "style": "night_bokeh",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "fireworks",
+        "anchor": "top"
+      },
+      {
+        "type": "marigold_garland",
+        "anchor": "top",
+        "scale": 0.9
+      },
+      {
+        "type": "diya_row",
+        "anchor": "bottom"
+      },
+      {
+        "type": "rangoli_corner",
+        "anchor": "bottom",
+        "scale": 0.8
+      }
+    ],
+    "border": {
+      "style": "rangoli",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.35,
+      "saturation": 1.1,
+      "contrast": 1.05,
+      "vignette": 0.3,
+      "glow": 0.5
+    },
+    "particles": {
+      "type": "sparkle",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Diwali!",
+      "Wishing you light and joy",
+      "Shubh Deepavali"
+    ],
+    "hi": [
+      "शुभ दीपावली!",
+      "दीपों का पर्व मुबारक",
+      "आपको दीवाली की हार्दिक शुभकामनाएँ"
+    ],
+    "mr": [
+      "शुभ दीपावली!",
+      "दिवाळीच्या हार्दिक शुभेच्छा",
+      "दिव्यांचा सण आनंदाचा जावो"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a Diwali night celebration: rows of glowing clay diyas, colourful rangoli on the floor, marigold garlands, warm golden bokeh lights and fireworks in the night sky. Warm festive lighting on the scene, photorealistic, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "festive Indian attire for Diwali: an elegant silk kurta or saree with gold zari embroidery",
+    "recommendedStrength": 0.65
+  }
+}

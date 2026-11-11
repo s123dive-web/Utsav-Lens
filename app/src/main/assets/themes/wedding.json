@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "wedding",
+  "name": {
+    "en": "Wedding",
+    "hi": "शादी",
+    "mr": "लग्न"
+  },
+  "category": "celebration",
+  "palette": {
+    "primary": "#B71C1C",
+    "secondary": "#AD1457",
+    "accent": "#FFD54F",
+    "background": "#3B0A12"
+  },
+  "lite": {
+    "background": {
+      "style": "floral_wall",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "marigold_garland",
+        "anchor": "top"
+      },
+      {
+        "type": "flower_shower",
+        "anchor": "full",
+        "scale": 1.0,
+        "opacity": 0.85
+      },
+      {
+        "type": "rangoli_corner",
+        "anchor": "bottom",
+        "scale": 0.7
+      }
+    ],
+    "border": {
+      "style": "zari",
+      "widthPct": 5
+    },
+    "grade": {
+      "warmth": 0.25,
+      "saturation": 1.1,
+      "contrast": 1.05,
+      "vignette": 0.2,
+      "glow": 0.5
+    },
+    "particles": {
+      "type": "petals",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Wedding!",
+      "Shubh Vivah",
+      "Congratulations to the couple"
+    ],
+    "hi": [
+      "शुभ विवाह!",
+      "शादी की हार्दिक बधाई"
+    ],
+    "mr": [
+      "शुभ विवाह!",
+      "लग्नाच्या हार्दिक शुभेच्छा",
+      "नांदा सौख्यभरे!"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a grand Indian wedding mandap: a lush floral wall of roses and marigolds, hanging flower strings, golden drapes, chandeliers and warm glowing lights. Photorealistic, luxurious, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "royal Indian wedding attire: an embroidered sherwani with a safa or a rich bridal lehenga with jewellery",
+    "recommendedStrength": 0.7
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "pongal",
+  "name": {
+    "en": "Pongal",
+    "hi": "पोंगल",
+    "mr": "पोंगल"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#F9A825",
+    "secondary": "#6D4C41",
+    "accent": "#FFFFFF",
+    "background": "#FFF8E1"
+  },
+  "lite": {
+    "background": {
+      "style": "sunburst",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "marigold_garland",
+        "anchor": "top",
+        "scale": 0.8
+      },
+      {
+        "type": "kolam",
+        "anchor": "bottom",
+        "scale": 0.8
+      },
+      {
+        "type": "sugarcane_pot",
+        "anchor": "bottom_right"
+      }
+    ],
+    "border": {
+      "style": "dotted",
+      "widthPct": 3
+    },
+    "grade": {
+      "warmth": 0.25,
+      "saturation": 1.1,
+      "contrast": 1.03,
+      "vignette": 0.1,
+      "glow": 0.3
+    },
+    "particles": {
+      "type": "none",
+      "density": 0.0
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Pongal!",
+      "Pongalo Pongal!"
+    ],
+    "hi": [
+      "पोंगल की शुभकामनाएँ!",
+      "पोंगलो पोंगल!"
+    ],
+    "mr": [
+      "पोंगलच्या हार्दिक शुभेच्छा!",
+      "पोंगलो पोंगल!"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a Pongal harvest morning: a decorated clay pot overflowing with sweet pongal, tall sugarcane stalks, white kolam patterns on the ground, banana leaves and a bright rising sun. Photorealistic, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "traditional South Indian attire: a silk pattu saree or a veshti with an angavastram",
+    "recommendedStrength": 0.65
+  }
+}

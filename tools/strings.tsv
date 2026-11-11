@@ -17,3 +17,85 @@ mask_no_person	No person found. The theme will be applied to the whole picture.	
 mask_failed	Person detection is unavailable on this device. The theme will be applied to the whole picture.	इस डिवाइस पर व्यक्ति की पहचान उपलब्ध नहीं है। थीम पूरी तस्वीर पर लगाई जाएगी।	या डिव्हाइसवर व्यक्ती ओळख उपलब्ध नाही. थीम संपूर्ण चित्रावर लागू केली जाईल.
 mask_person_found	Person detected. Faces found: %1$d	व्यक्ति मिला। चेहरे: %1$d	व्यक्ती आढळली. चेहरे: %1$d
 loading	Loading…	लोड हो रहा है…	लोड होत आहे…
+cancel	Cancel	रद्द करें	रद्द करा
+retry	Try again	फिर कोशिश करें	पुन्हा प्रयत्न करा
+ok	OK	ठीक है	ठीक आहे
+close	Close	बंद करें	बंद करा
+delete	Delete	हटाएँ	हटवा
+share	Share	शेयर करें	शेअर करा
+notif_channel	Processing	प्रोसेसिंग	प्रक्रिया
+notif_working	Creating your festive media	आपका उत्सव मीडिया बन रहा है	तुमचा सणाचा मीडिया तयार होत आहे
+progress_percent	%1$d%% done	%1$d%% पूरा	%1$d%% पूर्ण
+themes_none	No themes could be loaded.	कोई थीम लोड नहीं हो सकी।	कोणतीही थीम लोड करता आली नाही.
+options_title	Options	विकल्प	पर्याय
+options_engine	Engine	इंजन	इंजिन
+engine_lite	Lite	लाइट	लाइट
+engine_lite_desc	Offline. Decorates around the person. Face stays identical.	ऑफ़लाइन। व्यक्ति के आसपास सजावट करता है। चेहरा बिल्कुल वैसा ही रहता है।	ऑफलाइन. व्यक्तीभोवती सजावट करते. चेहरा अगदी तसाच राहतो.
+engine_local	Local AI	लोकल AI	लोकल AI
+engine_local_desc	Experimental. Repaints the background on this phone. Slow.	प्रायोगिक। इसी फ़ोन पर बैकग्राउंड दोबारा बनाता है। धीमा।	प्रायोगिक. याच फोनवर पार्श्वभूमी पुन्हा रंगवते. हळू.
+engine_cloud	HD Cloud	HD क्लाउड	HD क्लाउड
+engine_cloud_desc	Needs internet and your own API key. Can change outfit.	इंटरनेट और आपकी अपनी API कुंजी चाहिए। पोशाक बदल सकता है।	इंटरनेट आणि तुमची स्वतःची API की लागते. पोशाख बदलू शकते.
+ready_needs_key	Add an API key in Settings	सेटिंग्स में API कुंजी जोड़ें	सेटिंग्जमध्ये API की जोडा
+ready_needs_download	Model download needed (%1$s)	मॉडल डाउनलोड ज़रूरी (%1$s)	मॉडेल डाउनलोड आवश्यक (%1$s)
+ready_unsupported	Not supported on this device: %1$s	इस डिवाइस पर समर्थित नहीं: %1$s	या डिव्हाइसवर समर्थित नाही: %1$s
+opt_keep_face	Keep same face	चेहरा वही रखें	चेहरा तसाच ठेवा
+opt_keep_face_locked	Always on for this engine	इस इंजन में हमेशा चालू	या इंजिनसाठी नेहमी चालू
+opt_keep_background	Keep original background	मूल बैकग्राउंड रखें	मूळ पार्श्वभूमी ठेवा
+opt_keep_background_desc	Only overlays and colour grade are added	केवल ओवरले और रंग प्रभाव जोड़े जाते हैं	फक्त ओव्हरले आणि रंगछटा जोडल्या जातात
+opt_outfit	Change outfit to festive wear	पोशाक को उत्सव के कपड़ों में बदलें	पोशाख सणाच्या कपड्यांमध्ये बदला
+opt_outfit_unavailable	Only available with HD Cloud	केवल HD क्लाउड में उपलब्ध	फक्त HD क्लाउडमध्ये उपलब्ध
+opt_strength	Effect strength	प्रभाव की तीव्रता	प्रभावाची तीव्रता
+opt_aspect	Output shape	आउटपुट आकार	आउटपुट आकार
+aspect_original	Original	मूल	मूळ
+opt_greeting	Greeting text	शुभकामना संदेश	शुभेच्छा संदेश
+opt_greeting_hint	Type your own or pick one below	अपना लिखें या नीचे से चुनें	स्वतःचा लिहा किंवा खालीलपैकी निवडा
+opt_greeting_none	No text	कोई टेक्स्ट नहीं	मजकूर नाही
+opt_variations	Variations	विविध रूप	प्रकार
+opt_start	Create	बनाएँ	तयार करा
+lang_en	English	English	English
+lang_hi	हिन्दी	हिन्दी	हिन्दी
+lang_mr	मराठी	मराठी	मराठी
+progress_title	Working…	काम चल रहा है…	काम सुरू आहे…
+stage_loading	Opening your media	आपका मीडिया खोला जा रहा है	तुमचा मीडिया उघडत आहे
+stage_segmenting	Finding the person	व्यक्ति को ढूँढा जा रहा है	व्यक्ती शोधत आहे
+stage_uploading	Uploading	अपलोड हो रहा है	अपलोड होत आहे
+stage_generating	Generating	बनाया जा रहा है	तयार होत आहे
+stage_compositing	Decorating	सजाया जा रहा है	सजावट होत आहे
+stage_saving	Saving	सहेजा जा रहा है	सेव्ह होत आहे
+progress_step	Step %1$d of %2$d	चरण %1$d / %2$d	पायरी %1$d / %2$d
+progress_cancelled	Cancelled.	रद्द किया गया।	रद्द केले.
+progress_failed	Something went wrong	कुछ गड़बड़ हो गई	काहीतरी चुकले
+use_lite_instead	Use Lite instead	इसके बजाय लाइट इस्तेमाल करें	त्याऐवजी लाइट वापरा
+err_no_network	No internet connection.	इंटरनेट कनेक्शन नहीं है।	इंटरनेट कनेक्शन नाही.
+err_bad_key	The API key was rejected. Check it in Settings.	API कुंजी अस्वीकार हुई। सेटिंग्स में जाँचें।	API की नाकारली गेली. सेटिंग्जमध्ये तपासा.
+err_quota	The provider's quota or rate limit was reached. Try again later.	प्रदाता की सीमा पूरी हो गई। बाद में कोशिश करें।	प्रदात्याची मर्यादा संपली. नंतर प्रयत्न करा.
+err_safety	The provider refused this picture or prompt for safety reasons.	प्रदाता ने सुरक्षा कारणों से इस तस्वीर या प्रॉम्प्ट को अस्वीकार किया।	प्रदात्याने सुरक्षेच्या कारणास्तव हे चित्र किंवा प्रॉम्प्ट नाकारले.
+err_timeout	The request took too long.	अनुरोध में बहुत समय लगा।	विनंतीला खूप वेळ लागला.
+err_server	The provider had a temporary problem.	प्रदाता में अस्थायी समस्या थी।	प्रदात्याकडे तात्पुरती अडचण होती.
+err_bad_response	The provider sent an unexpected answer.	प्रदाता से अप्रत्याशित उत्तर मिला।	प्रदात्याकडून अनपेक्षित उत्तर आले.
+err_oom	Not enough memory for this file. Try a smaller picture.	इस फ़ाइल के लिए मेमोरी कम है। छोटी तस्वीर आज़माएँ।	या फाइलसाठी मेमरी अपुरी आहे. लहान चित्र वापरून पहा.
+err_unsupported	This is not supported on this device.	यह इस डिवाइस पर समर्थित नहीं है।	हे या डिव्हाइसवर समर्थित नाही.
+err_not_ready	This engine is not ready yet.	यह इंजन अभी तैयार नहीं है।	हे इंजिन अजून तयार नाही.
+err_io	The file could not be read or saved.	फ़ाइल पढ़ी या सहेजी नहीं जा सकी।	फाइल वाचता किंवा सेव्ह करता आली नाही.
+err_interrupted	The app was closed while this was running.	यह चलते समय ऐप बंद हो गया।	हे चालू असताना अॅप बंद झाले.
+err_invalid	This request could not be understood.	यह अनुरोध समझा नहीं जा सका।	ही विनंती समजली नाही.
+err_unknown	An unexpected error occurred.	एक अप्रत्याशित त्रुटि हुई।	अनपेक्षित त्रुटी आली.
+result_title	Result	परिणाम	निकाल
+result_saved	Saved in your gallery (UtsavLens album)	आपकी गैलरी में सहेजा गया (UtsavLens एल्बम)	तुमच्या गॅलरीत सेव्ह केले (UtsavLens अल्बम)
+result_saved_private	Saved inside the app (storage permission was denied). Use Share to export it.	ऐप के अंदर सहेजा गया (स्टोरेज अनुमति नहीं मिली)। निर्यात के लिए शेयर करें।	अॅपमध्ये सेव्ह केले (स्टोरेज परवानगी नाकारली). निर्यातीसाठी शेअर वापरा.
+result_no_person	No person was found, so the theme was applied to the whole picture.	कोई व्यक्ति नहीं मिला, इसलिए थीम पूरी तस्वीर पर लगाई गई।	कोणतीही व्यक्ती आढळली नाही, म्हणून थीम संपूर्ण चित्रावर लागू केली.
+result_compare	Before / after	पहले / बाद	आधी / नंतर
+result_before	Before	पहले	आधी
+result_after	After	बाद	नंतर
+result_delete_confirm	Delete this result? Your original is not affected.	यह परिणाम हटाएँ? आपकी मूल फ़ाइल पर कोई असर नहीं होगा।	हा निकाल हटवायचा? तुमच्या मूळ फाइलवर परिणाम होणार नाही.
+result_make_video	Make video	वीडियो बनाएँ	व्हिडिओ बनवा
+result_new	New	नया	नवीन
+result_missing	This result is no longer available.	यह परिणाम अब उपलब्ध नहीं है।	हा निकाल आता उपलब्ध नाही.
+share_title	Share with	इसके साथ शेयर करें	यांच्यासोबत शेअर करा
+consent_title	This photo will leave your device	यह फ़ोटो आपके डिवाइस से बाहर जाएगी	हा फोटो तुमच्या डिव्हाइसबाहेर जाईल
+consent_body	HD Cloud sends a downscaled copy of your photo (without location or camera data) and the theme prompt to %1$s over the internet. It is processed under that provider's terms. Nothing is sent to us. Continue?	HD क्लाउड आपकी फ़ोटो की छोटी प्रति (स्थान या कैमरा डेटा के बिना) और थीम प्रॉम्प्ट इंटरनेट से %1$s को भेजता है। यह उस प्रदाता की शर्तों के अनुसार प्रोसेस होती है। हमें कुछ नहीं भेजा जाता। जारी रखें?	HD क्लाउड तुमच्या फोटोची लहान प्रत (स्थान किंवा कॅमेरा डेटाशिवाय) आणि थीम प्रॉम्प्ट इंटरनेटद्वारे %1$s कडे पाठवते. त्यावर त्या प्रदात्याच्या अटींनुसार प्रक्रिया होते. आम्हाला काहीही पाठवले जात नाही. पुढे जायचे?
+consent_accept	I understand, send it	मैं समझता/समझती हूँ, भेजें	मला समजले, पाठवा
+unsupported_ram	needs more memory (%1$s)	अधिक मेमोरी चाहिए (%1$s)	अधिक मेमरी लागते (%1$s)
+unsupported_chipset	processor not supported (%1$s)	प्रोसेसर समर्थित नहीं (%1$s)	प्रोसेसर समर्थित नाही (%1$s)
+unsupported_android	Android version too old	Android संस्करण बहुत पुराना है	Android आवृत्ती खूप जुनी आहे
+unsupported_storage	not enough free storage (%1$s)	पर्याप्त खाली स्टोरेज नहीं (%1$s)	पुरेसे मोकळे स्टोरेज नाही (%1$s)

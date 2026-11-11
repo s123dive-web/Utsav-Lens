@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "eid",
+  "name": {
+    "en": "Eid",
+    "hi": "ईद",
+    "mr": "ईद"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#00695C",
+    "secondary": "#1A237E",
+    "accent": "#FFD54F",
+    "background": "#0B1E2A"
+  },
+  "lite": {
+    "background": {
+      "style": "gradient_glow",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "crescent_stars",
+        "anchor": "top_right"
+      },
+      {
+        "type": "lanterns",
+        "anchor": "top"
+      }
+    ],
+    "border": {
+      "style": "zari",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.1,
+      "saturation": 1.05,
+      "contrast": 1.05,
+      "vignette": 0.3,
+      "glow": 0.5
+    },
+    "particles": {
+      "type": "sparkle",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Eid Mubarak!",
+      "Wishing you peace and joy"
+    ],
+    "hi": [
+      "ईद मुबारक!",
+      "आपको ईद की दिली मुबारकबाद"
+    ],
+    "mr": [
+      "ईद मुबारक!",
+      "ईदच्या हार्दिक शुभेच्छा"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with an elegant Eid night: a deep teal sky with a crescent moon and stars, glowing hanging lanterns, ornate arches with geometric patterns and soft golden light. Photorealistic, graceful, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "elegant Eid attire: an embroidered kurta pajama or a graceful anarkali suit",
+    "recommendedStrength": 0.65
+  }
+}

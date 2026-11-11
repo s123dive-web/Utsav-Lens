@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "durga_puja",
+  "name": {
+    "en": "Durga Puja",
+    "hi": "दुर्गा पूजा",
+    "mr": "दुर्गा पूजा"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#C62828",
+    "secondary": "#F9A825",
+    "accent": "#FFFFFF",
+    "background": "#3E0A0A"
+  },
+  "lite": {
+    "background": {
+      "style": "temple_arch",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "marigold_garland",
+        "anchor": "top"
+      },
+      {
+        "type": "lotus",
+        "anchor": "bottom"
+      },
+      {
+        "type": "rangoli_corner",
+        "anchor": "bottom",
+        "scale": 0.7,
+        "opacity": 0.9
+      }
+    ],
+    "border": {
+      "style": "floral",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.25,
+      "saturation": 1.1,
+      "contrast": 1.05,
+      "vignette": 0.25,
+      "glow": 0.4
+    },
+    "particles": {
+      "type": "petals",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Shubho Durga Puja!",
+      "Happy Durga Puja"
+    ],
+    "hi": [
+      "शुभ दुर्गा पूजा!",
+      "जय माँ दुर्गा"
+    ],
+    "mr": [
+      "दुर्गा पूजेच्या शुभेच्छा!",
+      "जय माँ दुर्गा"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a grand Durga Puja pandal: red and white drapes, alpona floor art, hanging lamps, lotus flowers and dhunuchi smoke, warm evening light. Photorealistic, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "traditional Bengali festive wear: a red-bordered white saree or a silk dhoti-kurta",
+    "recommendedStrength": 0.65
+  }
+}

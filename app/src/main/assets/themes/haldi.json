@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "id": "haldi",
+  "name": {
+    "en": "Haldi",
+    "hi": "हल्दी",
+    "mr": "हळद"
+  },
+  "category": "celebration",
+  "palette": {
+    "primary": "#FBC02D",
+    "secondary": "#F57F17",
+    "accent": "#FFFFFF",
+    "background": "#FFF8E1"
+  },
+  "lite": {
+    "background": {
+      "style": "floral_wall",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "marigold_garland",
+        "anchor": "top"
+      },
+      {
+        "type": "flower_shower",
+        "anchor": "full",
+        "scale": 1.0,
+        "opacity": 0.9
+      }
+    ],
+    "border": {
+      "style": "floral",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.35,
+      "saturation": 1.15,
+      "contrast": 1.02,
+      "vignette": 0.05,
+      "glow": 0.4
+    },
+    "particles": {
+      "type": "petals",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Haldi!",
+      "Haldi ceremony"
+    ],
+    "hi": [
+      "हल्दी की शुभकामनाएँ!",
+      "हल्दी की रस्म"
+    ],
+    "mr": [
+      "हळदीच्या शुभेच्छा!",
+      "हळदी समारंभ"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a bright haldi ceremony decor: a yellow marigold flower wall, hanging genda phool strings, brass urli bowls with petals, yellow drapes and sunny daylight. Photorealistic, joyful, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "yellow haldi ceremony attire: a yellow kurta or a yellow lehenga with floral jewellery",
+    "recommendedStrength": 0.7
+  }
+}

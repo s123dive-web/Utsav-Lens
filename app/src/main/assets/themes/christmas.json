@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "christmas",
+  "name": {
+    "en": "Christmas",
+    "hi": "क्रिसमस",
+    "mr": "नाताळ"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#C62828",
+    "secondary": "#2E7D32",
+    "accent": "#FFD54F",
+    "background": "#0D1B2A"
+  },
+  "lite": {
+    "background": {
+      "style": "snowy_night",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "string_lights",
+        "anchor": "top"
+      },
+      {
+        "type": "snowflakes",
+        "anchor": "full",
+        "scale": 1.0,
+        "opacity": 0.9
+      },
+      {
+        "type": "pine_tree",
+        "anchor": "bottom_left"
+      }
+    ],
+    "border": {
+      "style": "lights",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.05,
+      "saturation": 1.1,
+      "contrast": 1.05,
+      "vignette": 0.25,
+      "glow": 0.4
+    },
+    "particles": {
+      "type": "snow",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Merry Christmas!",
+      "Season's Greetings"
+    ],
+    "hi": [
+      "क्रिसमस की शुभकामनाएँ!",
+      "मेरी क्रिसमस!"
+    ],
+    "mr": [
+      "नाताळच्या हार्दिक शुभेच्छा!",
+      "मेरी ख्रिसमस!"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a cosy Christmas scene: a decorated Christmas tree with ornaments and fairy lights, wrapped gifts, falling snow outside a window and a warm fireplace glow. Photorealistic, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "cosy Christmas wear: a red and green festive sweater with a Santa hat",
+    "recommendedStrength": 0.65
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "onam",
+  "name": {
+    "en": "Onam",
+    "hi": "ओणम",
+    "mr": "ओणम"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#F9A825",
+    "secondary": "#2E7D32",
+    "accent": "#FFFDE7",
+    "background": "#1B3A1B"
+  },
+  "lite": {
+    "background": {
+      "style": "gradient_glow",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "marigold_garland",
+        "anchor": "top",
+        "scale": 0.8
+      },
+      {
+        "type": "pookalam",
+        "anchor": "bottom"
+      }
+    ],
+    "border": {
+      "style": "floral",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.2,
+      "saturation": 1.1,
+      "contrast": 1.03,
+      "vignette": 0.15,
+      "glow": 0.3
+    },
+    "particles": {
+      "type": "petals",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Onam!",
+      "Onam Ashamsakal"
+    ],
+    "hi": [
+      "ओणम की शुभकामनाएँ!",
+      "ओणम आशंसकल"
+    ],
+    "mr": [
+      "ओणमच्या हार्दिक शुभेच्छा!",
+      "ओणम आशंसकल"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a Kerala Onam scene: a large pookalam flower carpet on the floor, brass nilavilakku lamps, banana plants and coconut palms, a traditional tiled-roof house in soft daylight. Photorealistic, serene, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "traditional Kerala attire: an off-white kasavu saree or mundu with gold border",
+    "recommendedStrength": 0.65
+  }
+}

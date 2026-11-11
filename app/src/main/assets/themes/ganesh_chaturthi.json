@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "ganesh_chaturthi",
+  "name": {
+    "en": "Ganesh Chaturthi",
+    "hi": "गणेश चतुर्थी",
+    "mr": "गणेश चतुर्थी"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#D84315",
+    "secondary": "#F9A825",
+    "accent": "#FFD54F",
+    "background": "#4E1A0B"
+  },
+  "lite": {
+    "background": {
+      "style": "temple_arch",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "marigold_garland",
+        "anchor": "top"
+      },
+      {
+        "type": "string_lights",
+        "anchor": "top",
+        "scale": 0.8,
+        "opacity": 0.8
+      },
+      {
+        "type": "lotus",
+        "anchor": "bottom"
+      },
+      {
+        "type": "diya_row",
+        "anchor": "bottom",
+        "scale": 0.8
+      }
+    ],
+    "border": {
+      "style": "floral",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.3,
+      "saturation": 1.1,
+      "contrast": 1.03,
+      "vignette": 0.2,
+      "glow": 0.4
+    },
+    "particles": {
+      "type": "petals",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Ganpati Bappa Morya!",
+      "Happy Ganesh Chaturthi"
+    ],
+    "hi": [
+      "गणपति बप्पा मोरया!",
+      "गणेश चतुर्थी की शुभकामनाएँ"
+    ],
+    "mr": [
+      "गणपती बाप्पा मोरया!",
+      "गणेश चतुर्थीच्या हार्दिक शुभेच्छा",
+      "मंगलमूर्ती मोरया!"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a decorated Ganesh Chaturthi pandal: marigold and hibiscus garlands, a festive mandap with drapes, brass lamps, flower petals and warm lights. Photorealistic, devotional, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "traditional Maharashtrian festive wear: a silk kurta with a pheta turban or a nauvari saree",
+    "recommendedStrength": 0.65
+  }
+}

@@ -28,7 +28,7 @@ import com.utsavlens.app.R
 
 /** The chosen photo with the mask debug toggle and the "no person found" notice. */
 @Composable
-fun SourceHeader(state: SourceUiState, height: Dp, modifier: Modifier = Modifier) {
+fun SourceHeader(state: SourceUiState, height: Dp, modifier: Modifier = Modifier, showMaskToggle: Boolean = true) {
     var showMask by rememberSaveable { mutableStateOf(false) }
     Column(modifier.fillMaxWidth()) {
         Box(Modifier.fillMaxWidth().height(height), contentAlignment = Alignment.Center) {
@@ -41,13 +41,15 @@ fun SourceHeader(state: SourceUiState, height: Dp, modifier: Modifier = Modifier
         }
         if (state.preview != null) {
             Row(Modifier.fillMaxWidth().padding(horizontal = 16.dp), verticalAlignment = Alignment.CenterVertically) {
-                FilterChip(
-                    selected = showMask,
-                    enabled = state.maskDebug != null,
-                    onClick = { showMask = !showMask },
-                    label = { Text(stringResource(if (showMask) R.string.mask_hide else R.string.mask_show)) },
-                    modifier = Modifier.heightIn(min = 48.dp),
-                )
+                if (showMaskToggle) {
+                    FilterChip(
+                        selected = showMask,
+                        enabled = state.maskDebug != null,
+                        onClick = { showMask = !showMask },
+                        label = { Text(stringResource(if (showMask) R.string.mask_hide else R.string.mask_show)) },
+                        modifier = Modifier.heightIn(min = 48.dp),
+                    )
+                }
                 val note = when {
                     !state.maskReady -> stringResource(R.string.loading)
                     state.segmenterFailed -> stringResource(R.string.mask_failed)

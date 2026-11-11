@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "mehendi",
+  "name": {
+    "en": "Mehendi",
+    "hi": "मेहंदी",
+    "mr": "मेहंदी"
+  },
+  "category": "celebration",
+  "palette": {
+    "primary": "#2E7D32",
+    "secondary": "#AD1457",
+    "accent": "#FFD54F",
+    "background": "#F1F8E9"
+  },
+  "lite": {
+    "background": {
+      "style": "gradient_glow",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "string_lights",
+        "anchor": "top",
+        "scale": 0.9
+      },
+      {
+        "type": "paisley",
+        "anchor": "corners"
+      }
+    ],
+    "border": {
+      "style": "dotted",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.15,
+      "saturation": 1.15,
+      "contrast": 1.03,
+      "vignette": 0.1,
+      "glow": 0.4
+    },
+    "particles": {
+      "type": "sparkle",
+      "density": 0.4
+    }
+  },
+  "greetings": {
+    "en": [
+      "Mehendi night!",
+      "Mehendi hai rachne wali"
+    ],
+    "hi": [
+      "मेहंदी की रात!",
+      "मेहंदी है रचने वाली"
+    ],
+    "mr": [
+      "मेहंदी सोहळा!",
+      "मेहंदीच्या शुभेच्छा"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a colourful mehendi function decor: green and pink drapes, hanging tassels and umbrellas, floral rangoli, cushions and fairy lights. Photorealistic, vibrant, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "colourful mehendi function attire: a green or pink lehenga or kurta with floral jewellery",
+    "recommendedStrength": 0.65
+  }
+}

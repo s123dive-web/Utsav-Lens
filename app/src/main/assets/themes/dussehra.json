@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "dussehra",
+  "name": {
+    "en": "Dussehra",
+    "hi": "दशहरा",
+    "mr": "दसरा"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#E65100",
+    "secondary": "#B71C1C",
+    "accent": "#FFD54F",
+    "background": "#2B1206"
+  },
+  "lite": {
+    "background": {
+      "style": "sunburst",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "fireworks",
+        "anchor": "top"
+      },
+      {
+        "type": "bow_arrow",
+        "anchor": "top_right"
+      },
+      {
+        "type": "marigold_garland",
+        "anchor": "top",
+        "scale": 0.8
+      },
+      {
+        "type": "diya_row",
+        "anchor": "bottom",
+        "scale": 0.8
+      }
+    ],
+    "border": {
+      "style": "zari",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.3,
+      "saturation": 1.1,
+      "contrast": 1.06,
+      "vignette": 0.25,
+      "glow": 0.5
+    },
+    "particles": {
+      "type": "embers",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Dussehra!",
+      "Victory of good over evil"
+    ],
+    "hi": [
+      "दशहरे की शुभकामनाएँ!",
+      "विजयादशमी की हार्दिक बधाई",
+      "असत्य पर सत्य की जीत"
+    ],
+    "mr": [
+      "दसऱ्याच्या हार्दिक शुभेच्छा!",
+      "विजयादशमीच्या शुभेच्छा",
+      "सोन्यासारखे रहा!"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a Dussehra evening celebration: a festive mela ground at dusk, glowing lamps, marigold decorations, fireworks and warm firelight in the sky. Photorealistic, dramatic, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "traditional festive attire: a silk kurta with a stole or a rich silk saree",
+    "recommendedStrength": 0.65
+  }
+}

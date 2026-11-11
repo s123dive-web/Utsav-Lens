@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "independence_day",
+  "name": {
+    "en": "Independence Day",
+    "hi": "स्वतंत्रता दिवस",
+    "mr": "स्वातंत्र्य दिन"
+  },
+  "category": "national",
+  "palette": {
+    "primary": "#FF9933",
+    "secondary": "#138808",
+    "accent": "#FFFFFF",
+    "background": "#EAF4FF"
+  },
+  "lite": {
+    "background": {
+      "style": "sky",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "tricolor_ribbons",
+        "anchor": "top"
+      },
+      {
+        "type": "balloons",
+        "anchor": "sides",
+        "scale": 0.9
+      }
+    ],
+    "border": {
+      "style": "tricolor",
+      "widthPct": 3
+    },
+    "grade": {
+      "warmth": 0.05,
+      "saturation": 1.1,
+      "contrast": 1.03,
+      "vignette": 0.0,
+      "glow": 0.2
+    },
+    "particles": {
+      "type": "confetti",
+      "density": 0.4
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Independence Day!",
+      "Jai Hind!",
+      "Proud to be Indian"
+    ],
+    "hi": [
+      "स्वतंत्रता दिवस की शुभकामनाएँ!",
+      "जय हिंद!",
+      "वंदे मातरम्"
+    ],
+    "mr": [
+      "स्वातंत्र्य दिनाच्या हार्दिक शुभेच्छा!",
+      "जय हिंद!",
+      "वंदे मातरम्"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with an Indian Independence Day celebration: a bright blue sky, saffron, white and green ribbons, balloons and bunting, a sunlit open ground. Photorealistic, proud and cheerful, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "a white kurta with a saffron, white and green stole",
+    "recommendedStrength": 0.6
+  }
+}

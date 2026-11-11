@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "raksha_bandhan",
+  "name": {
+    "en": "Raksha Bandhan",
+    "hi": "रक्षा बंधन",
+    "mr": "रक्षाबंधन"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#D81B60",
+    "secondary": "#FF8F00",
+    "accent": "#FFD54F",
+    "background": "#FFF8E1"
+  },
+  "lite": {
+    "background": {
+      "style": "gradient_glow",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "rakhi",
+        "anchor": "top"
+      },
+      {
+        "type": "flower_shower",
+        "anchor": "full",
+        "scale": 1.0,
+        "opacity": 0.8
+      },
+      {
+        "type": "rangoli_corner",
+        "anchor": "bottom",
+        "scale": 0.7
+      }
+    ],
+    "border": {
+      "style": "dotted",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.2,
+      "saturation": 1.1,
+      "contrast": 1.0,
+      "vignette": 0.1,
+      "glow": 0.3
+    },
+    "particles": {
+      "type": "sparkle",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Raksha Bandhan!",
+      "To my dearest brother",
+      "To my dearest sister"
+    ],
+    "hi": [
+      "रक्षा बंधन की शुभकामनाएँ!",
+      "भाई-बहन का प्यार अमर रहे"
+    ],
+    "mr": [
+      "रक्षाबंधनाच्या हार्दिक शुभेच्छा!",
+      "भावा-बहिणीचे नाते अतूट राहो"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a warm Raksha Bandhan home setting: a decorated pooja thali with rakhi, sweets and a diya, flower decorations, soft pastel drapes and gentle daylight. Photorealistic, heartfelt, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "festive Indian family attire: a pastel kurta or an embroidered salwar suit",
+    "recommendedStrength": 0.6
+  }
+}

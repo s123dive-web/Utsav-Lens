@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "makar_sankranti",
+  "name": {
+    "en": "Makar Sankranti",
+    "hi": "मकर संक्रांति",
+    "mr": "मकर संक्रांती"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#FB8C00",
+    "secondary": "#1E88E5",
+    "accent": "#FDD835",
+    "background": "#E3F2FD"
+  },
+  "lite": {
+    "background": {
+      "style": "sky",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "kites",
+        "anchor": "top"
+      }
+    ],
+    "border": {
+      "style": "simple",
+      "widthPct": 3
+    },
+    "grade": {
+      "warmth": 0.15,
+      "saturation": 1.15,
+      "contrast": 1.03,
+      "vignette": 0.0,
+      "glow": 0.2
+    },
+    "particles": {
+      "type": "none",
+      "density": 0.0
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Makar Sankranti!",
+      "Fly high like a kite"
+    ],
+    "hi": [
+      "मकर संक्रांति की शुभकामनाएँ!",
+      "पतंगों का त्योहार मुबारक"
+    ],
+    "mr": [
+      "मकर संक्रांतीच्या शुभेच्छा!",
+      "तिळगुळ घ्या, गोड गोड बोला!"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a Makar Sankranti rooftop scene: a clear blue winter sky full of colourful paper kites, bright sunshine and distant rooftops. Photorealistic, cheerful, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "bright festive casual wear: a colourful kurta or a black saree with gold border",
+    "recommendedStrength": 0.65
+  }
+}

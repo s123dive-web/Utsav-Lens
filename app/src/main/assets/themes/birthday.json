@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "birthday",
+  "name": {
+    "en": "Birthday",
+    "hi": "जन्मदिन",
+    "mr": "वाढदिवस"
+  },
+  "category": "celebration",
+  "palette": {
+    "primary": "#EC407A",
+    "secondary": "#7E57C2",
+    "accent": "#FFD54F",
+    "background": "#FFF0F5"
+  },
+  "lite": {
+    "background": {
+      "style": "confetti_party",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "string_lights",
+        "anchor": "top"
+      },
+      {
+        "type": "balloons",
+        "anchor": "sides"
+      }
+    ],
+    "border": {
+      "style": "simple",
+      "widthPct": 3
+    },
+    "grade": {
+      "warmth": 0.1,
+      "saturation": 1.15,
+      "contrast": 1.03,
+      "vignette": 0.0,
+      "glow": 0.3
+    },
+    "particles": {
+      "type": "confetti",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Birthday!",
+      "Many happy returns of the day",
+      "Have a wonderful year ahead"
+    ],
+    "hi": [
+      "जन्मदिन मुबारक!",
+      "जन्मदिन की हार्दिक शुभकामनाएँ"
+    ],
+    "mr": [
+      "वाढदिवसाच्या हार्दिक शुभेच्छा!",
+      "जन्मदिन मुबारक!"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a fun birthday party: colourful balloons, streamers and confetti, a decorated cake table, fairy lights and a bright cheerful room. Photorealistic, playful, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "smart party wear with a small birthday party hat",
+    "recommendedStrength": 0.65
+  }
+}

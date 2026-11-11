@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "gudi_padwa",
+  "name": {
+    "en": "Gudi Padwa",
+    "hi": "गुड़ी पड़वा",
+    "mr": "गुढीपाडवा"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#FF6F00",
+    "secondary": "#2E7D32",
+    "accent": "#FFD54F",
+    "background": "#FFF3E0"
+  },
+  "lite": {
+    "background": {
+      "style": "sunburst",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "gudi",
+        "anchor": "top_right"
+      },
+      {
+        "type": "marigold_garland",
+        "anchor": "top"
+      },
+      {
+        "type": "rangoli_corner",
+        "anchor": "bottom"
+      }
+    ],
+    "border": {
+      "style": "rangoli",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.25,
+      "saturation": 1.1,
+      "contrast": 1.03,
+      "vignette": 0.1,
+      "glow": 0.3
+    },
+    "particles": {
+      "type": "petals",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Gudi Padwa!",
+      "Happy New Year"
+    ],
+    "hi": [
+      "गुड़ी पड़वा की शुभकामनाएँ!",
+      "नव वर्ष मंगलमय हो"
+    ],
+    "mr": [
+      "गुढीपाडव्याच्या हार्दिक शुभेच्छा!",
+      "नूतन वर्षाभिनंदन!",
+      "नवीन वर्ष सुखाचे जावो"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a Gudi Padwa morning: a traditional Maharashtrian home entrance with a raised gudi (silk cloth, neem leaves, garland and an upturned copper pot), mango-leaf toran, rangoli at the doorstep and bright morning sun. Photorealistic, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "traditional Maharashtrian attire: a nauvari saree with nath or a kurta with a pheta",
+    "recommendedStrength": 0.65
+  }
+}

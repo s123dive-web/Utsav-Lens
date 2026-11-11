@@ -34,6 +34,18 @@ object BitmapIo {
         throw ImageTooLargeException("Not enough memory to decode image")
     }
 
+    fun isVideo(context: Context, uri: Uri): Boolean = try {
+        context.contentResolver.getType(uri)?.startsWith("video/") == true || uri.toString().substringAfterLast('.').lowercase() in setOf("mp4", "mkv", "webm", "3gp", "mov")
+    } catch (_: Exception) {
+        false
+    }
+
+    /** Decodes a photo, or a representative frame when [uri] is a video. */
+    @Throws(IOException::class)
+    fun decodeAny(context: Context, uri: Uri, maxEdgePx: Int): Bitmap =
+        if (isVideo(context, uri)) videoFrame(context, uri, maxEdgePx) ?: throw IOException("Cannot read video frame")
+        else decode(context, uri, maxEdgePx)
+
     private fun decodeOnce(context: Context, uri: Uri, maxEdgePx: Int): Bitmap {
         val resolver = context.contentResolver
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }

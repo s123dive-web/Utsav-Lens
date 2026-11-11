@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "lohri",
+  "name": {
+    "en": "Lohri",
+    "hi": "लोहड़ी",
+    "mr": "लोहरी"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#EF6C00",
+    "secondary": "#C62828",
+    "accent": "#FFCA28",
+    "background": "#1B0F08"
+  },
+  "lite": {
+    "background": {
+      "style": "night_bokeh",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "string_lights",
+        "anchor": "top",
+        "scale": 0.9
+      },
+      {
+        "type": "bonfire",
+        "anchor": "bottom_left"
+      }
+    ],
+    "border": {
+      "style": "lights",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.4,
+      "saturation": 1.1,
+      "contrast": 1.06,
+      "vignette": 0.35,
+      "glow": 0.5
+    },
+    "particles": {
+      "type": "embers",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Lohri!",
+      "Lohri di lakh lakh vadhaiyan"
+    ],
+    "hi": [
+      "लोहड़ी की शुभकामनाएँ!",
+      "लोहड़ी दी लख लख वधाइयाँ"
+    ],
+    "mr": [
+      "लोहरीच्या हार्दिक शुभेच्छा!",
+      "लोहरी दी लख लख वधाइयाँ"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a Lohri night celebration: a large glowing bonfire with rising sparks in a village courtyard, string lights, people softly blurred far behind, warm orange firelight. Photorealistic, cosy, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "colourful Punjabi festive wear: a phulkari dupatta suit or a kurta with a bright turban",
+    "recommendedStrength": 0.65
+  }
+}

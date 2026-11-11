@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "navratri",
+  "name": {
+    "en": "Navratri / Garba",
+    "hi": "नवरात्रि / गरबा",
+    "mr": "नवरात्री / गरबा"
+  },
+  "category": "festival",
+  "palette": {
+    "primary": "#C2185B",
+    "secondary": "#FF6F00",
+    "accent": "#FFD740",
+    "background": "#2A0A3A"
+  },
+  "lite": {
+    "background": {
+      "style": "gradient_glow",
+      "intensity": 1.0
+    },
+    "overlays": [
+      {
+        "type": "string_lights",
+        "anchor": "top"
+      },
+      {
+        "type": "rangoli_corner",
+        "anchor": "top",
+        "scale": 0.7
+      },
+      {
+        "type": "dandiya",
+        "anchor": "bottom"
+      }
+    ],
+    "border": {
+      "style": "zari",
+      "widthPct": 4
+    },
+    "grade": {
+      "warmth": 0.2,
+      "saturation": 1.2,
+      "contrast": 1.05,
+      "vignette": 0.2,
+      "glow": 0.5
+    },
+    "particles": {
+      "type": "sparkle",
+      "density": 0.5
+    }
+  },
+  "greetings": {
+    "en": [
+      "Happy Navratri!",
+      "Let's play Garba!"
+    ],
+    "hi": [
+      "शुभ नवरात्रि!",
+      "जय माता दी",
+      "गरबा की रात मुबारक"
+    ],
+    "mr": [
+      "शुभ नवरात्री!",
+      "नवरात्रीच्या हार्दिक शुभेच्छा",
+      "चला गरबा खेळूया!"
+    ]
+  },
+  "prompt": {
+    "positive": "Replace the background with a lively Navratri garba night: a decorated ground with colourful lights, bandhani drapes, dandiya dancers softly blurred far in the background, festive glow. Photorealistic, vibrant, high detail.",
+    "negative": "blurry, low quality, distorted face, changed identity, extra limbs, extra fingers, text, watermark, logo, cartoon",
+    "outfit": "colourful Navratri garba attire: a mirror-work chaniya choli or kediyu with bandhani dupatta",
+    "recommendedStrength": 0.65
+  }
+}

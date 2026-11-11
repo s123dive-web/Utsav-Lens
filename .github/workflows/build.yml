@@ -66,7 +66,7 @@ jobs:
           if [ -n "$(git status --porcelain data/schemas)" ]; then
             for f in $(git status --porcelain data/schemas | awk '{print $2}'); do
               [ -d "$f" ] && f="$(find "$f" -name '*.json')"
-              for g in $f; do echo "=== SCHEMA $g"; cat "$g"; echo; done
+              for g in $f; do echo "=== SCHEMA $g"; tr -d ' \n' < "$g"; echo; done
             done
           fi
 
@@ -75,8 +75,8 @@ jobs:
         run: |
           echo "===== ERROR SUMMARY ====="
           cat test.log build.log 2>/dev/null \
-            | grep -E '^e: |error:|What went wrong|Could not (resolve|find|get)|Unresolved reference|AAPT|Execution failed|> Task .* FAILED|^> ' \
-            | sed -e "s#file://$GITHUB_WORKSPACE/##" -e "s#$GITHUB_WORKSPACE/##" | cut -c1-320 | awk '!seen[$0]++' | head -70 || true
+            | grep -E '^e: |error:|What went wrong|Could not (resolve|find|get)|Unresolved reference|AAPT|Execution failed|> Task .* FAILED' \
+            | sed -e "s#file://$GITHUB_WORKSPACE/##" -e "s#$GITHUB_WORKSPACE/##" | cut -c1-320 | awk '!seen[$0]++' | head -45 || true
           echo "===== FAILED TESTS ====="
           grep -rlE '<(failure|error) ' --include='TEST-*.xml' . 2>/dev/null | head -8 | while read f; do
             echo "--- $f"; grep -E -B1 -A7 '<(failure|error) ' "$f" | cut -c1-320 | head -30

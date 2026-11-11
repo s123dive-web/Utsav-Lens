@@ -3,5 +3,6 @@
     <files-path name="captures" path="captures/" />
     <cache-path name="previews" path="previews/" />
     <cache-path name="share" path="share/" />
+    <files-path name="outputs_internal" path="outputs/" />
     <external-files-path name="outputs" path="." />
 </paths>

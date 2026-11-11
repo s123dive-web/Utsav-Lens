@@ -1,17 +1,26 @@
 package com.utsavlens.app.nav
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.utsavlens.app.ui.home.HomeScreen
+import com.utsavlens.app.ui.options.OptionsScreen
+import com.utsavlens.app.ui.progress.ProgressScreen
+import com.utsavlens.app.ui.result.ResultScreen
 import com.utsavlens.app.ui.themes.ThemesScreen
+
+private fun NavHostController.goHome() {
+    navigate(Routes.HOME) { popUpTo(Routes.HOME) { inclusive = true } }
+}
 
 @Composable
 fun AppNavHost() {
     val nav = rememberNavController()
+    val stringArg = { name: String, default: String -> navArgument(name) { type = NavType.StringType; defaultValue = default } }
     NavHost(navController = nav, startDestination = Routes.HOME) {
         composable(Routes.HOME) {
             HomeScreen(
@@ -20,14 +29,35 @@ fun AppNavHost() {
                 onSettings = {},
             )
         }
+        composable(Routes.THEMES, arguments = listOf(stringArg(Routes.ARG_SRC, ""), stringArg(Routes.ARG_KIND, Routes.KIND_PHOTO))) {
+            ThemesScreen(
+                onBack = { nav.popBackStack() },
+                onThemeChosen = { src, kind, theme -> nav.navigate(Routes.options(src, kind, theme)) },
+            )
+        }
         composable(
-            Routes.THEMES,
-            arguments = listOf(
-                navArgument(Routes.ARG_SRC) { type = NavType.StringType; defaultValue = "" },
-                navArgument(Routes.ARG_KIND) { type = NavType.StringType; defaultValue = Routes.KIND_PHOTO },
-            ),
+            Routes.OPTIONS,
+            arguments = listOf(stringArg(Routes.ARG_SRC, ""), stringArg(Routes.ARG_KIND, Routes.KIND_PHOTO), stringArg(Routes.ARG_THEME, "")),
         ) {
-            ThemesScreen(onBack = { nav.popBackStack() })
+            OptionsScreen(
+                onBack = { nav.popBackStack() },
+                onStarted = { jobId -> nav.navigate(Routes.progress(jobId)) },
+                onOpenSettings = {},
+            )
+        }
+        composable(Routes.PROGRESS, arguments = listOf(stringArg(Routes.ARG_JOB, ""))) {
+            ProgressScreen(
+                onDone = { jobId -> nav.navigate(Routes.result(jobId)) { popUpTo(Routes.PROGRESS) { inclusive = true } } },
+                onNewJob = { jobId -> nav.navigate(Routes.progress(jobId)) { popUpTo(Routes.PROGRESS) { inclusive = true } } },
+                onClose = { nav.popBackStack() },
+            )
+        }
+        composable(Routes.RESULT, arguments = listOf(stringArg(Routes.ARG_JOB, ""))) {
+            ResultScreen(
+                onBack = { nav.popBackStack() },
+                onHome = { nav.goHome() },
+                onMakeVideo = {},
+            )
         }
     }
 }

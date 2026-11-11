@@ -2,6 +2,11 @@ package com.utsavlens.themes
 
 import com.utsavlens.core.AppLogger
 
+/** How engines look themes up without knowing where they are stored. */
+fun interface ThemeLookup {
+    suspend fun theme(id: String): Theme?
+}
+
 /** A raw theme file: name plus a lazy reader, so one unreadable file cannot break the others. */
 class ThemeSource(val fileName: String, val read: () -> String)
 

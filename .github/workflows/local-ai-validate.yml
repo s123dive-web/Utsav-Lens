@@ -1,0 +1,45 @@
+name: Validate Local AI pipeline with real weights
+
+# Runs the pure-Kotlin Stable Diffusion (LCM) inpainting pipeline end to end on the runner's CPU
+# with the same ONNX weights the app downloads. It proves the pipeline code works with the real
+# model; it does not measure phone performance.
+on:
+  push:
+    branches: [claude/utsav-lens-phase-0-ufwxd1]
+    paths: ['sd-core/**', 'tools/sd-validate/**', '.github/workflows/local-ai-validate.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+      - name: Download model (about 4.3 GB)
+        run: bash tools/sd-validate/download.sh | tee files.log
+      - name: Run pipeline
+        run: |
+          set -o pipefail
+          ./gradlew -PjvmOnly :sd-core:test --tests '*RealModelTest*' -PsdModelDir="$PWD/model" --console=plain 2>&1 | tee run.log
+      - name: Upload generated image
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: local-ai-validate
+          path: sd-core/build/sd-out/*.png
+          if-no-files-found: warn
+      - name: Summary
+        if: always()
+        run: |
+          echo "===== SD SUMMARY ====="
+          cat files.log 2>/dev/null | cut -c1-200 || true
+          grep -E 'SD-VALIDATE|FAILED|Exception|AssertionError|expected|but was' run.log 2>/dev/null | cut -c1-600 | head -40 || true
+          echo "===== END ====="

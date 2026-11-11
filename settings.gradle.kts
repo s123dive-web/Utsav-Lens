@@ -11,7 +11,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "UtsavLens"
 
-include(":core", ":themes", ":engine-api")
+include(":core", ":themes", ":engine-api", ":sd-core")
 if (!jvmOnly) {
     include(":platform", ":segmentation", ":engine-lite", ":engine-local", ":engine-cloud", ":video", ":data", ":app")
 }

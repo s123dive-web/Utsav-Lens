@@ -40,6 +40,9 @@ jobs:
           if git ls-files | grep -E '(^|/)local\.properties$|\.jks$|\.keystore$|\.p12$|\.pem$'; then
             echo "Forbidden file committed"; exit 1
           fi
+          # The three strings.xml files are generated from one table, so en/hi/mr cannot drift apart.
+          python3 tools/gen_strings.py
+          git diff --exit-code -- app/src/main/res/values/strings.xml app/src/main/res/values-hi/strings.xml app/src/main/res/values-mr/strings.xml
           if git grep -nE 'AIza[0-9A-Za-z_-]{35}|sk-[A-Za-z0-9]{32,}' -- . ; then
             echo "Possible API key committed"; exit 1
           fi

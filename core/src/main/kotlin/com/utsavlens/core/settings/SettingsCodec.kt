@@ -72,7 +72,7 @@ class SettingsCodec(
             baseUrl = s.cloud.baseUrl.trim().trimEnd('/').ifEmpty { CloudSettings().baseUrl },
             modelId = s.cloud.modelId.trim().ifEmpty { CloudSettings().modelId },
         ),
-        local = s.local.copy(steps = s.local.steps.coerceIn(4, 50)),
+        local = s.local.copy(steps = s.local.steps.coerceIn(2, 8)),
         promptAssist = s.promptAssist.copy(
             baseUrl = s.promptAssist.baseUrl.trim().trimEnd('/').ifEmpty { PromptAssistSettings().baseUrl },
             modelId = s.promptAssist.modelId.trim().ifEmpty { PromptAssistSettings().modelId },

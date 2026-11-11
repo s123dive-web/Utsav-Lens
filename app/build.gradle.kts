@@ -16,6 +16,8 @@ android {
         targetSdk = 37
         versionCode = (System.getenv("GITHUB_RUN_NUMBER") ?: "1").toInt()
         versionName = "0.1." + (System.getenv("GITHUB_RUN_NUMBER") ?: "0")
+        // Native libraries (MediaPipe, ONNX Runtime) are shipped for real phones and the x86_64 emulator only.
+        ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64") }
     }
     // Debug build only: no release signing config and no keystore in this repo by design.
     compileOptions {

@@ -15,13 +15,24 @@ import com.utsavlens.core.settings.SettingsStore
 import com.utsavlens.data.secure.KeystoreCipher
 import com.utsavlens.engine.api.ImageEditProvider
 import com.utsavlens.engine.cloud.CloudEngine
+import com.utsavlens.engine.api.ApiKey
+import com.utsavlens.engine.api.PromptAssistProvider
+import com.utsavlens.engine.api.PromptAssistRequest
+import com.utsavlens.engine.api.ProviderConfig
 import com.utsavlens.engine.cloud.GeminiImageProvider
+import com.utsavlens.engine.cloud.GeminiPromptAssistProvider
+import com.utsavlens.engine.cloud.PromptRefiner
+import com.utsavlens.core.getOrNull
 import com.utsavlens.engine.cloud.UsageCounter
 import okhttp3.OkHttpClient
 import java.time.LocalDate
 import java.util.concurrent.TimeUnit
 import com.utsavlens.data.db.AppDatabase
 import com.utsavlens.engine.lite.LiteEngine
+import com.utsavlens.engine.local.LocalAiEngine
+import com.utsavlens.engine.local.ModelDownloader
+import com.utsavlens.engine.local.ModelStore
+import com.utsavlens.app.jobs.ModelJobs
 import com.utsavlens.platform.MediaStoreWriter
 import com.utsavlens.segmentation.MaskProvider
 import com.utsavlens.segmentation.MediaPipeMaskProvider
@@ -95,11 +106,51 @@ object AppModule {
     fun cloudEngine(
         @ApplicationContext context: Context, themes: ThemeRepository,
         providers: Map<String, @JvmSuppressWildcards ImageEditProvider>, secrets: SecretStore, settings: SettingsStore,
-        usage: UsageCounter, writer: MediaStoreWriter, d: DispatcherProvider, logger: AppLogger,
-    ): CloudEngine = CloudEngine(context, themes, providers, secrets, settings, usage, writer, d, logger)
+        usage: UsageCounter, writer: MediaStoreWriter, d: DispatcherProvider, logger: AppLogger, refiner: PromptRefiner,
+    ): CloudEngine = CloudEngine(context, themes, providers, secrets, settings, usage, writer, d, logger, refiner = refiner)
 
     @Provides @Singleton
-    fun engineRegistry(lite: LiteEngine, cloud: CloudEngine): EngineRegistry = EngineRegistry(listOf(lite, cloud))
+    fun promptAssistProvider(client: OkHttpClient): PromptAssistProvider = GeminiPromptAssistProvider(client)
+
+    /**
+     * Prompt assist (optional). Runs only when the user switched it on, accepted that the photo is
+     * also sent to the text model, and a key exists (its own key, or the HD Cloud key of the same
+     * provider). Any failure returns null and the plain theme prompt is used.
+     */
+    @Provides @Singleton
+    fun promptRefiner(settings: SettingsStore, secrets: SecretStore, provider: PromptAssistProvider, usage: UsageCounter): PromptRefiner =
+        PromptRefiner { imageJpeg, theme, options, basePrompt ->
+            val s = settings.load()
+            val assist = s.promptAssist
+            if (!assist.enabled || (ASSIST_CONSENT_PREFIX + provider.id) !in s.cloud.uploadConsentProviders) return@PromptRefiner null
+            val key = secrets.get(SecretStore.assistKeyName(provider.id)) ?: secrets.get(SecretStore.imageKeyName(provider.id)) ?: return@PromptRefiner null
+            usage.increment(provider.id)
+            provider.refine(
+                PromptAssistRequest(ApiKey(key), ProviderConfig(assist.baseUrl, assist.modelId, 60), imageJpeg, theme.name.en, basePrompt, options.changeOutfit),
+            ).getOrNull()
+        }
+
+    const val ASSIST_CONSENT_PREFIX = "assist:"
+
+    @Provides @Singleton
+    fun modelStore(@ApplicationContext context: Context): ModelStore = ModelStore(File(context.filesDir, "models"))
+
+    @Provides @Singleton
+    fun modelDownloader(client: OkHttpClient, store: ModelStore, d: DispatcherProvider): ModelDownloader =
+        ModelDownloader(client.newBuilder().readTimeout(60, TimeUnit.SECONDS).build(), store, d.io)
+
+    @Provides @Singleton
+    fun localAiEngine(
+        @ApplicationContext context: Context, themes: ThemeRepository, masks: MaskProvider, store: ModelStore,
+        settings: SettingsStore, writer: MediaStoreWriter, d: DispatcherProvider, logger: AppLogger,
+    ): LocalAiEngine = LocalAiEngine(context, themes, masks, store, settings, writer, d, logger)
+
+    @Provides @Singleton
+    fun modelJobs(@ApplicationContext context: Context, controller: JobController, downloader: ModelDownloader, settings: SettingsStore): ModelJobs =
+        ModelJobs(context, controller, downloader, settings)
+
+    @Provides @Singleton
+    fun engineRegistry(lite: LiteEngine, local: LocalAiEngine, cloud: CloudEngine): EngineRegistry = EngineRegistry(listOf(lite, local, cloud))
 
     @Provides @Singleton
     fun jobController(

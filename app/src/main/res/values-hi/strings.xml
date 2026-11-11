@@ -137,7 +137,7 @@
     <string name="cloud_key_save">कुंजी सहेजें</string>
     <string name="cloud_key_test">कुंजी जाँचें</string>
     <string name="cloud_key_testing">जाँच हो रही है…</string>
-    <string name="cloud_key_ok">कुंजी इस मॉडल के साथ काम करती है।</string>
+    <string name="cloud_key_ok">कुंजी काम करती है।</string>
     <string name="cloud_key_remove">कुंजी हटाएँ</string>
     <string name="cloud_get_key">कुंजी कहाँ से मिलेगी</string>
     <string name="cloud_requests_today">आज भेजे गए अनुरोध: %1$d</string>
@@ -146,4 +146,26 @@
     <string name="cloud_apply">लागू करें</string>
     <string name="cloud_reset">डिफ़ॉल्ट पर रीसेट करें</string>
     <string name="cloud_note">आपकी कुंजी केवल इसी फ़ोन पर एन्क्रिप्टेड रूप में रहती है और बैकअप या लॉग में कभी शामिल नहीं होती। उपयोग का शुल्क प्रदाता आपके अपने खाते से लेता है।</string>
+    <string name="stage_downloading">डाउनलोड हो रहा है</string>
+    <string name="local_title">लोकल AI (प्रायोगिक)</string>
+    <string name="local_experimental">इस फ़ोन पर Stable Diffusion मॉडल चलाकर बैकग्राउंड दोबारा बनाता है। व्यक्ति को कभी दोबारा नहीं बनाया जाता। लगभग 12 GB RAM वाला फ़्लैगशिप फ़ोन चाहिए; एक तस्वीर में कई मिनट लग सकते हैं और फ़ोन गर्म होगा।</string>
+    <string name="local_model">मॉडल: %1$s। डाउनलोड आकार: %2$s।</string>
+    <string name="local_ready">मॉडल डाउनलोड और सत्यापित हो गया (इस फ़ोन पर %1$s)।</string>
+    <string name="local_not_downloaded">मॉडल अभी डाउनलोड नहीं हुआ है।</string>
+    <string name="local_download">मॉडल डाउनलोड करें (%1$s)</string>
+    <string name="local_downloading">मॉडल डाउनलोड हो रहा है: %1$d%%</string>
+    <string name="local_checksum_failed">डाउनलोड की गई फ़ाइल ख़राब थी (चेकसम मेल नहीं खाया)। डाउनलोड फिर से शुरू करें।</string>
+    <string name="local_wifi_needed">वाई-फ़ाई का इंतज़ार है। वाई-फ़ाई से जुड़ें या \"केवल वाई-फ़ाई\" बंद करें, फिर दोबारा शुरू करें; डाउनलोड वहीं से जारी रहेगा।</string>
+    <string name="local_wifi_only">केवल वाई-फ़ाई पर डाउनलोड करें</string>
+    <string name="local_steps">जनरेशन चरण: %1$d (अधिक = धीमा)</string>
+    <string name="local_delete">मॉडल हटाएँ (%1$s खाली होगा)</string>
+    <string name="local_source">मॉडल स्रोत: %1$s</string>
+    <string name="assist_title">प्रॉम्प्ट सहायता (वैकल्पिक)</string>
+    <string name="assist_desc">HD क्लाउड के साथ, एक टेक्स्ट मॉडल पहले आपकी फ़ोटो देखकर थीम निर्देशों को उसके अनुसार ढालता है। इसके बिना भी सब कुछ काम करता है।</string>
+    <string name="assist_enable">HD क्लाउड के साथ प्रॉम्प्ट सहायता इस्तेमाल करें</string>
+    <string name="assist_needs_key">प्रॉम्प्ट सहायता के लिए API कुंजी जोड़ें (यहाँ या HD क्लाउड में)।</string>
+    <string name="assist_own_key">प्रॉम्प्ट सहायता के लिए अलग कुंजी सहेजी गई है।</string>
+    <string name="assist_shared_key">अलग कुंजी नहीं है: सहेजी गई हो तो HD क्लाउड कुंजी इस्तेमाल होगी।</string>
+    <string name="assist_key_label">प्रॉम्प्ट सहायता के लिए अलग कुंजी (वैकल्पिक)</string>
+    <string name="assist_consent">प्रॉम्प्ट सहायता हर HD क्लाउड अनुरोध से पहले वही छोटी की गई फ़ोटो (स्थान या कैमरा डेटा के बिना) %1$s के टेक्स्ट मॉडल को भेजती है। इसमें आपकी कुंजी इस्तेमाल होती है और यह एक अतिरिक्त अनुरोध गिना जाता है। चालू करें?</string>
 </resources>

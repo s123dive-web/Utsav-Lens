@@ -26,23 +26,23 @@ class SettingsCodecTest {
     }
 
     @Test fun deepMergeKeepsSiblingDefaultsWhenOnlyOneNestedKeyIsStored() {
-        val stored = """{"schemaVersion":2,"cloud":{"modelId":"my-model"},"local":{"steps":30}}"""
+        val stored = """{"schemaVersion":2,"cloud":{"modelId":"my-model"},"local":{"steps":6}}"""
         val s = codec.decode(stored)
         assertThat(s.cloud.modelId).isEqualTo("my-model")
         assertThat(s.cloud.baseUrl).isEqualTo(CloudSettings().baseUrl)
         assertThat(s.cloud.uploadMaxEdgePx).isEqualTo(CloudSettings().uploadMaxEdgePx)
-        assertThat(s.local.steps).isEqualTo(30)
+        assertThat(s.local.steps).isEqualTo(6)
         assertThat(s.local.wifiOnly).isTrue()
     }
 
     @Test fun wrongTypesFallBackToDefaultsPerField() {
-        val stored = """{"schemaVersion":2,"language":42,"showMaskDebug":"yes","cloud":"oops","local":{"wifiOnly":"no","steps":12}}"""
+        val stored = """{"schemaVersion":2,"language":42,"showMaskDebug":"yes","cloud":"oops","local":{"wifiOnly":"no","steps":5}}"""
         val s = codec.decode(stored)
         assertThat(s.language).isEqualTo("system")
         assertThat(s.showMaskDebug).isFalse()
         assertThat(s.cloud).isEqualTo(CloudSettings())
         assertThat(s.local.wifiOnly).isTrue()
-        assertThat(s.local.steps).isEqualTo(12)
+        assertThat(s.local.steps).isEqualTo(5)
     }
 
     @Test fun unknownKeysAreDropped() {
@@ -82,7 +82,7 @@ class SettingsCodecTest {
         assertThat(s.cloud.uploadMaxEdgePx).isEqualTo(4096)
         assertThat(s.cloud.timeoutSeconds).isEqualTo(15)
         assertThat(s.cloud.baseUrl).isEqualTo("https://x.test")
-        assertThat(s.local.steps).isEqualTo(50)
+        assertThat(s.local.steps).isEqualTo(8)
         assertThat(s.lastOptions.strength).isEqualTo(1f)
         assertThat(s.lastOptions.variations).isEqualTo(4)
     }

@@ -32,6 +32,7 @@ fun stageText(stage: TransformStage?): Int = when (stage) {
     TransformStage.LOADING, null -> R.string.stage_loading
     TransformStage.SEGMENTING -> R.string.stage_segmenting
     TransformStage.UPLOADING -> R.string.stage_uploading
+    TransformStage.DOWNLOADING -> R.string.stage_downloading
     TransformStage.GENERATING -> R.string.stage_generating
     TransformStage.COMPOSITING -> R.string.stage_compositing
     TransformStage.SAVING -> R.string.stage_saving

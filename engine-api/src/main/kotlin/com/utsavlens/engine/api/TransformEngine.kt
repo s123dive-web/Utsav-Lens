@@ -101,7 +101,7 @@ class PreviewFrame(val width: Int, val height: Int, val argb: IntArray) {
     init { require(width > 0 && height > 0 && argb.size == width * height) { "bad preview frame" } }
 }
 
-enum class TransformStage { LOADING, SEGMENTING, UPLOADING, GENERATING, COMPOSITING, SAVING }
+enum class TransformStage { LOADING, SEGMENTING, UPLOADING, DOWNLOADING, GENERATING, COMPOSITING, SAVING }
 
 enum class ResultNote { NO_PERSON_FOUND, DOWNSCALED, PROMPT_ASSISTED }
 

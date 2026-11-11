@@ -56,6 +56,14 @@ class LiteEngine(
     private var cachedSmallKey: String? = null
     private var cachedSmall: Bitmap? = null
 
+    /** Drops cached bitmaps and masks (called when the system reports memory pressure). */
+    suspend fun clearCaches() = cacheLock.withLock {
+        cachedMask = null
+        cachedMaskUri = null
+        cachedSmall = null
+        cachedSmallKey = null
+    }
+
     override suspend fun capabilities(): EngineCapabilities = caps
     override suspend fun isReady(): Readiness = Readiness.Ready
 

@@ -137,7 +137,7 @@
     <string name="cloud_key_save">Save key</string>
     <string name="cloud_key_test">Test key</string>
     <string name="cloud_key_testing">Testing…</string>
-    <string name="cloud_key_ok">The key works with this model.</string>
+    <string name="cloud_key_ok">The key works.</string>
     <string name="cloud_key_remove">Remove key</string>
     <string name="cloud_get_key">Where to get a key</string>
     <string name="cloud_requests_today">Requests sent today: %1$d</string>
@@ -146,4 +146,26 @@
     <string name="cloud_apply">Apply</string>
     <string name="cloud_reset">Reset to default</string>
     <string name="cloud_note">Your key is stored only on this phone, encrypted, and is never included in backups or logs. Usage is billed by the provider to your own account.</string>
+    <string name="stage_downloading">Downloading</string>
+    <string name="local_title">Local AI (experimental)</string>
+    <string name="local_experimental">Runs a Stable Diffusion model on this phone to repaint the background. The person is never repainted. Needs a flagship phone with about 12 GB RAM; a picture can take several minutes and the phone will get warm.</string>
+    <string name="local_model">Model: %1$s. Download size: %2$s.</string>
+    <string name="local_ready">Model downloaded and verified (%1$s on this phone).</string>
+    <string name="local_not_downloaded">The model is not downloaded yet.</string>
+    <string name="local_download">Download model (%1$s)</string>
+    <string name="local_downloading">Downloading model: %1$d%%</string>
+    <string name="local_checksum_failed">A downloaded file was damaged (checksum mismatch). Start the download again.</string>
+    <string name="local_wifi_needed">Waiting for Wi-Fi. Connect to Wi-Fi or turn off \"Wi-Fi only\", then start again; the download resumes where it stopped.</string>
+    <string name="local_wifi_only">Download on Wi-Fi only</string>
+    <string name="local_steps">Generation steps: %1$d (more is slower)</string>
+    <string name="local_delete">Delete model (frees %1$s)</string>
+    <string name="local_source">Model source: %1$s</string>
+    <string name="assist_title">Prompt assist (optional)</string>
+    <string name="assist_desc">With HD Cloud, a text model first looks at your photo and tailors the theme instructions to it. Everything works without this.</string>
+    <string name="assist_enable">Use prompt assist with HD Cloud</string>
+    <string name="assist_needs_key">Add an API key (here or under HD Cloud) to use prompt assist.</string>
+    <string name="assist_own_key">A separate key is saved for prompt assist.</string>
+    <string name="assist_shared_key">No separate key: the HD Cloud key is used if it is saved.</string>
+    <string name="assist_key_label">Separate key for prompt assist (optional)</string>
+    <string name="assist_consent">Prompt assist sends the same downscaled photo (without location or camera data) to a text model at %1$s before each HD Cloud request. This uses your key and counts as an extra request. Turn it on?</string>
 </resources>

@@ -137,7 +137,7 @@
     <string name="cloud_key_save">की सेव्ह करा</string>
     <string name="cloud_key_test">की तपासा</string>
     <string name="cloud_key_testing">तपासत आहे…</string>
-    <string name="cloud_key_ok">की या मॉडेलसोबत काम करते.</string>
+    <string name="cloud_key_ok">की काम करते.</string>
     <string name="cloud_key_remove">की काढा</string>
     <string name="cloud_get_key">की कुठे मिळेल</string>
     <string name="cloud_requests_today">आज पाठवलेल्या विनंत्या: %1$d</string>
@@ -146,4 +146,26 @@
     <string name="cloud_apply">लागू करा</string>
     <string name="cloud_reset">डीफॉल्टवर रीसेट करा</string>
     <string name="cloud_note">तुमची की फक्त याच फोनवर एन्क्रिप्टेड स्वरूपात राहते आणि बॅकअप किंवा लॉगमध्ये कधीही समाविष्ट होत नाही. वापराचे शुल्क प्रदाता तुमच्या स्वतःच्या खात्यातून घेतो.</string>
+    <string name="stage_downloading">डाउनलोड होत आहे</string>
+    <string name="local_title">लोकल AI (प्रायोगिक)</string>
+    <string name="local_experimental">या फोनवर Stable Diffusion मॉडेल चालवून पार्श्वभूमी पुन्हा रंगवते. व्यक्ती कधीही पुन्हा रंगवली जात नाही. सुमारे 12 GB RAM असलेला फ्लॅगशिप फोन लागतो; एका चित्राला काही मिनिटे लागू शकतात आणि फोन गरम होईल.</string>
+    <string name="local_model">मॉडेल: %1$s. डाउनलोड आकार: %2$s.</string>
+    <string name="local_ready">मॉडेल डाउनलोड आणि पडताळले गेले (या फोनवर %1$s).</string>
+    <string name="local_not_downloaded">मॉडेल अजून डाउनलोड झालेले नाही.</string>
+    <string name="local_download">मॉडेल डाउनलोड करा (%1$s)</string>
+    <string name="local_downloading">मॉडेल डाउनलोड होत आहे: %1$d%%</string>
+    <string name="local_checksum_failed">डाउनलोड केलेली फाइल खराब होती (चेकसम जुळला नाही). डाउनलोड पुन्हा सुरू करा.</string>
+    <string name="local_wifi_needed">वाय-फायची प्रतीक्षा आहे. वाय-फायला जोडा किंवा \"फक्त वाय-फाय\" बंद करा, मग पुन्हा सुरू करा; डाउनलोड थांबले तिथून पुढे चालू राहील.</string>
+    <string name="local_wifi_only">फक्त वाय-फायवर डाउनलोड करा</string>
+    <string name="local_steps">जनरेशन पायऱ्या: %1$d (जास्त = हळू)</string>
+    <string name="local_delete">मॉडेल हटवा (%1$s मोकळे होईल)</string>
+    <string name="local_source">मॉडेल स्रोत: %1$s</string>
+    <string name="assist_title">प्रॉम्प्ट सहाय्य (ऐच्छिक)</string>
+    <string name="assist_desc">HD क्लाउडसोबत, एक टेक्स्ट मॉडेल आधी तुमचा फोटो पाहून थीमच्या सूचना त्यानुसार जुळवते. याशिवायही सर्व काही चालते.</string>
+    <string name="assist_enable">HD क्लाउडसोबत प्रॉम्प्ट सहाय्य वापरा</string>
+    <string name="assist_needs_key">प्रॉम्प्ट सहाय्यासाठी API की जोडा (येथे किंवा HD क्लाउडमध्ये).</string>
+    <string name="assist_own_key">प्रॉम्प्ट सहाय्यासाठी वेगळी की सेव्ह केली आहे.</string>
+    <string name="assist_shared_key">वेगळी की नाही: सेव्ह केलेली असल्यास HD क्लाउड की वापरली जाईल.</string>
+    <string name="assist_key_label">प्रॉम्प्ट सहाय्यासाठी वेगळी की (ऐच्छिक)</string>
+    <string name="assist_consent">प्रॉम्प्ट सहाय्य प्रत्येक HD क्लाउड विनंतीपूर्वी तोच लहान केलेला फोटो (स्थान किंवा कॅमेरा डेटाशिवाय) %1$s च्या टेक्स्ट मॉडेलकडे पाठवते. यात तुमची की वापरली जाते आणि ही एक अतिरिक्त विनंती मोजली जाते. चालू करायचे?</string>
 </resources>

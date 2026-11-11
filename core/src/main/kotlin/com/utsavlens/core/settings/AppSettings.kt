@@ -35,14 +35,17 @@ data class CloudSettings(
     val uploadConsentProviders: List<String> = emptyList(),
 ) {
     companion object {
-        const val DEFAULT_GEMINI_IMAGE_MODEL = "gemini-2.5-flash-image"
+        /** Primary model of the official image generation guide (verified 2026-11-11). */
+        const val DEFAULT_GEMINI_IMAGE_MODEL = "gemini-nano-banana-2.1"
     }
 }
 
 @Serializable
 data class LocalAiSettings(
+    /** Download the model only on Wi-Fi / unmetered networks. */
     val wifiOnly: Boolean = true,
-    val steps: Int = 20,
+    /** LCM denoising steps (2..8). More steps = slower, slightly more detail. */
+    val steps: Int = 4,
 )
 
 @Serializable
@@ -53,7 +56,8 @@ data class PromptAssistSettings(
     val modelId: String = DEFAULT_TEXT_MODEL,
 ) {
     companion object {
-        const val DEFAULT_TEXT_MODEL = "gemini-2.5-flash"
+        /** Model used in the official Interactions API guide (verified 2026-11-11). */
+        const val DEFAULT_TEXT_MODEL = "gemini-3.8-flash"
     }
 }
 

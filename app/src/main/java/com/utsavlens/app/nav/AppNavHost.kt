@@ -13,6 +13,8 @@ import com.utsavlens.app.ui.options.OptionsScreen
 import com.utsavlens.app.ui.progress.ProgressScreen
 import com.utsavlens.app.ui.result.ResultScreen
 import com.utsavlens.app.ui.settings.CloudSettingsSection
+import com.utsavlens.app.ui.settings.LocalAiSettingsSection
+import com.utsavlens.app.ui.settings.PromptAssistSection
 import com.utsavlens.app.ui.settings.SettingsScreen
 import com.utsavlens.app.ui.themes.ThemesScreen
 import com.utsavlens.app.ui.video.SlideshowScreen
@@ -70,7 +72,7 @@ fun AppNavHost() {
             HistoryScreen(onBack = { nav.popBackStack() }, onOpen = { batchId -> nav.navigate(Routes.result(batchId)) })
         }
         composable(Routes.SETTINGS) {
-            SettingsScreen(onBack = { nav.popBackStack() }, extraSections = { CloudSettingsSection() })
+            SettingsScreen(onBack = { nav.popBackStack() }, extraSections = { CloudSettingsSection(); PromptAssistSection(); LocalAiSettingsSection() })
         }
     }
 }

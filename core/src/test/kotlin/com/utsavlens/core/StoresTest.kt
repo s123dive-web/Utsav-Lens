@@ -40,8 +40,8 @@ class StoresTest {
 
     @Test fun concurrentUpdatesAreNotLost() = runTest {
         val store = SettingsStore(File(tmp.root, "s.json"), StandardTestDispatcher(testScheduler))
-        (1..50).map { async { store.update { it.copy(local = it.local.copy(steps = it.local.steps + 1)) } } }.awaitAll()
-        assertThat(store.settings.value.local.steps).isEqualTo(AppSettings().local.steps + 50)
+        (1..50).map { async { store.update { it.copy(cloud = it.cloud.copy(timeoutSeconds = it.cloud.timeoutSeconds + 1)) } } }.awaitAll()
+        assertThat(store.settings.value.cloud.timeoutSeconds).isEqualTo(AppSettings().cloud.timeoutSeconds + 50)
     }
 
     @Test fun corruptSettingsFileFallsBackToDefaults() = runTest {

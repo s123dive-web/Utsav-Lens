@@ -134,7 +134,7 @@ cloud_key_label	Your API key	आपकी API कुंजी	तुमची AP
 cloud_key_save	Save key	कुंजी सहेजें	की सेव्ह करा
 cloud_key_test	Test key	कुंजी जाँचें	की तपासा
 cloud_key_testing	Testing…	जाँच हो रही है…	तपासत आहे…
-cloud_key_ok	The key works with this model.	कुंजी इस मॉडल के साथ काम करती है।	की या मॉडेलसोबत काम करते.
+cloud_key_ok	The key works.	कुंजी काम करती है।	की काम करते.
 cloud_key_remove	Remove key	कुंजी हटाएँ	की काढा
 cloud_get_key	Where to get a key	कुंजी कहाँ से मिलेगी	की कुठे मिळेल
 cloud_requests_today	Requests sent today: %1$d	आज भेजे गए अनुरोध: %1$d	आज पाठवलेल्या विनंत्या: %1$d
@@ -143,3 +143,25 @@ cloud_base_url	Base URL (https)	बेस URL (https)	बेस URL (https)
 cloud_apply	Apply	लागू करें	लागू करा
 cloud_reset	Reset to default	डिफ़ॉल्ट पर रीसेट करें	डीफॉल्टवर रीसेट करा
 cloud_note	Your key is stored only on this phone, encrypted, and is never included in backups or logs. Usage is billed by the provider to your own account.	आपकी कुंजी केवल इसी फ़ोन पर एन्क्रिप्टेड रूप में रहती है और बैकअप या लॉग में कभी शामिल नहीं होती। उपयोग का शुल्क प्रदाता आपके अपने खाते से लेता है।	तुमची की फक्त याच फोनवर एन्क्रिप्टेड स्वरूपात राहते आणि बॅकअप किंवा लॉगमध्ये कधीही समाविष्ट होत नाही. वापराचे शुल्क प्रदाता तुमच्या स्वतःच्या खात्यातून घेतो.
+stage_downloading	Downloading	डाउनलोड हो रहा है	डाउनलोड होत आहे
+local_title	Local AI (experimental)	लोकल AI (प्रायोगिक)	लोकल AI (प्रायोगिक)
+local_experimental	Runs a Stable Diffusion model on this phone to repaint the background. The person is never repainted. Needs a flagship phone with about 12 GB RAM; a picture can take several minutes and the phone will get warm.	इस फ़ोन पर Stable Diffusion मॉडल चलाकर बैकग्राउंड दोबारा बनाता है। व्यक्ति को कभी दोबारा नहीं बनाया जाता। लगभग 12 GB RAM वाला फ़्लैगशिप फ़ोन चाहिए; एक तस्वीर में कई मिनट लग सकते हैं और फ़ोन गर्म होगा।	या फोनवर Stable Diffusion मॉडेल चालवून पार्श्वभूमी पुन्हा रंगवते. व्यक्ती कधीही पुन्हा रंगवली जात नाही. सुमारे 12 GB RAM असलेला फ्लॅगशिप फोन लागतो; एका चित्राला काही मिनिटे लागू शकतात आणि फोन गरम होईल.
+local_model	Model: %1$s. Download size: %2$s.	मॉडल: %1$s। डाउनलोड आकार: %2$s।	मॉडेल: %1$s. डाउनलोड आकार: %2$s.
+local_ready	Model downloaded and verified (%1$s on this phone).	मॉडल डाउनलोड और सत्यापित हो गया (इस फ़ोन पर %1$s)।	मॉडेल डाउनलोड आणि पडताळले गेले (या फोनवर %1$s).
+local_not_downloaded	The model is not downloaded yet.	मॉडल अभी डाउनलोड नहीं हुआ है।	मॉडेल अजून डाउनलोड झालेले नाही.
+local_download	Download model (%1$s)	मॉडल डाउनलोड करें (%1$s)	मॉडेल डाउनलोड करा (%1$s)
+local_downloading	Downloading model: %1$d%%	मॉडल डाउनलोड हो रहा है: %1$d%%	मॉडेल डाउनलोड होत आहे: %1$d%%
+local_checksum_failed	A downloaded file was damaged (checksum mismatch). Start the download again.	डाउनलोड की गई फ़ाइल ख़राब थी (चेकसम मेल नहीं खाया)। डाउनलोड फिर से शुरू करें।	डाउनलोड केलेली फाइल खराब होती (चेकसम जुळला नाही). डाउनलोड पुन्हा सुरू करा.
+local_wifi_needed	Waiting for Wi-Fi. Connect to Wi-Fi or turn off "Wi-Fi only", then start again; the download resumes where it stopped.	वाई-फ़ाई का इंतज़ार है। वाई-फ़ाई से जुड़ें या "केवल वाई-फ़ाई" बंद करें, फिर दोबारा शुरू करें; डाउनलोड वहीं से जारी रहेगा।	वाय-फायची प्रतीक्षा आहे. वाय-फायला जोडा किंवा "फक्त वाय-फाय" बंद करा, मग पुन्हा सुरू करा; डाउनलोड थांबले तिथून पुढे चालू राहील.
+local_wifi_only	Download on Wi-Fi only	केवल वाई-फ़ाई पर डाउनलोड करें	फक्त वाय-फायवर डाउनलोड करा
+local_steps	Generation steps: %1$d (more is slower)	जनरेशन चरण: %1$d (अधिक = धीमा)	जनरेशन पायऱ्या: %1$d (जास्त = हळू)
+local_delete	Delete model (frees %1$s)	मॉडल हटाएँ (%1$s खाली होगा)	मॉडेल हटवा (%1$s मोकळे होईल)
+local_source	Model source: %1$s	मॉडल स्रोत: %1$s	मॉडेल स्रोत: %1$s
+assist_title	Prompt assist (optional)	प्रॉम्प्ट सहायता (वैकल्पिक)	प्रॉम्प्ट सहाय्य (ऐच्छिक)
+assist_desc	With HD Cloud, a text model first looks at your photo and tailors the theme instructions to it. Everything works without this.	HD क्लाउड के साथ, एक टेक्स्ट मॉडल पहले आपकी फ़ोटो देखकर थीम निर्देशों को उसके अनुसार ढालता है। इसके बिना भी सब कुछ काम करता है।	HD क्लाउडसोबत, एक टेक्स्ट मॉडेल आधी तुमचा फोटो पाहून थीमच्या सूचना त्यानुसार जुळवते. याशिवायही सर्व काही चालते.
+assist_enable	Use prompt assist with HD Cloud	HD क्लाउड के साथ प्रॉम्प्ट सहायता इस्तेमाल करें	HD क्लाउडसोबत प्रॉम्प्ट सहाय्य वापरा
+assist_needs_key	Add an API key (here or under HD Cloud) to use prompt assist.	प्रॉम्प्ट सहायता के लिए API कुंजी जोड़ें (यहाँ या HD क्लाउड में)।	प्रॉम्प्ट सहाय्यासाठी API की जोडा (येथे किंवा HD क्लाउडमध्ये).
+assist_own_key	A separate key is saved for prompt assist.	प्रॉम्प्ट सहायता के लिए अलग कुंजी सहेजी गई है।	प्रॉम्प्ट सहाय्यासाठी वेगळी की सेव्ह केली आहे.
+assist_shared_key	No separate key: the HD Cloud key is used if it is saved.	अलग कुंजी नहीं है: सहेजी गई हो तो HD क्लाउड कुंजी इस्तेमाल होगी।	वेगळी की नाही: सेव्ह केलेली असल्यास HD क्लाउड की वापरली जाईल.
+assist_key_label	Separate key for prompt assist (optional)	प्रॉम्प्ट सहायता के लिए अलग कुंजी (वैकल्पिक)	प्रॉम्प्ट सहाय्यासाठी वेगळी की (ऐच्छिक)
+assist_consent	Prompt assist sends the same downscaled photo (without location or camera data) to a text model at %1$s before each HD Cloud request. This uses your key and counts as an extra request. Turn it on?	प्रॉम्प्ट सहायता हर HD क्लाउड अनुरोध से पहले वही छोटी की गई फ़ोटो (स्थान या कैमरा डेटा के बिना) %1$s के टेक्स्ट मॉडल को भेजती है। इसमें आपकी कुंजी इस्तेमाल होती है और यह एक अतिरिक्त अनुरोध गिना जाता है। चालू करें?	प्रॉम्प्ट सहाय्य प्रत्येक HD क्लाउड विनंतीपूर्वी तोच लहान केलेला फोटो (स्थान किंवा कॅमेरा डेटाशिवाय) %1$s च्या टेक्स्ट मॉडेलकडे पाठवते. यात तुमची की वापरली जाते आणि ही एक अतिरिक्त विनंती मोजली जाते. चालू करायचे?

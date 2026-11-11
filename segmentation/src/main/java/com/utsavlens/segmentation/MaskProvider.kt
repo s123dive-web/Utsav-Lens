@@ -127,11 +127,17 @@ class MediaPipeMaskProvider(
         return copy
     }
 
+    /** Releases the native models. Skipped while a segmentation is running; they reload on next use. */
     override fun close() {
-        try { segmenter?.close() } catch (_: Throwable) {}
-        try { faceDetector?.close() } catch (_: Throwable) {}
-        segmenter = null
-        faceDetector = null
+        if (!mutex.tryLock()) return
+        try {
+            try { segmenter?.close() } catch (_: Throwable) {}
+            try { faceDetector?.close() } catch (_: Throwable) {}
+            segmenter = null
+            faceDetector = null
+        } finally {
+            mutex.unlock()
+        }
     }
 
     companion object {

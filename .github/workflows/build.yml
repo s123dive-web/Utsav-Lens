@@ -43,6 +43,13 @@ jobs:
           # The three strings.xml files are generated from one table, so en/hi/mr cannot drift apart.
           python3 tools/gen_strings.py
           git diff --exit-code -- app/src/main/res/values/strings.xml app/src/main/res/values-hi/strings.xml app/src/main/res/values-mr/strings.xml
+          # Data-integrity guards: raw file writes only in the three reviewed places, and the only
+          # code that can delete media is MediaStoreWriter (which refuses anything outside our album).
+          bad=$(grep -rnE 'FileOutputStream\(|\.writeText\(|\.writeBytes\(|FileWriter\(|openOutputStream\(|openFileDescriptor\(|RandomAccessFile\(|\.outputStream\(\)' --include=*.kt */src/main \
+            | grep -vE 'core/src/main/kotlin/com/utsavlens/core/io/AtomicFileWriter.kt|platform/src/main/java/com/utsavlens/platform/MediaStoreWriter.kt|engine-local/src/main/java/com/utsavlens/engine/local/ModelDownloader.kt|AtomicFileWriter\.' || true)
+          if [ -n "$bad" ]; then echo "File write outside the atomic writer:"; echo "$bad"; exit 1; fi
+          bad=$(grep -rnE 'esolver\.delete\(' --include=*.kt */src/main | grep -v 'platform/src/main/java/com/utsavlens/platform/MediaStoreWriter.kt' || true)
+          if [ -n "$bad" ]; then echo "Media delete outside MediaStoreWriter:"; echo "$bad"; exit 1; fi
           if git grep -nE 'AIza[0-9A-Za-z_-]{35}|sk-[A-Za-z0-9]{32,}' -- . ; then
             echo "Possible API key committed"; exit 1
           fi

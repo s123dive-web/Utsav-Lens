@@ -13,7 +13,6 @@ data class AppSettings(
     val language: String = "system",
     val defaultEngine: String = "lite",
     val showMaskDebug: Boolean = false,
-    val rightsNoticeSeen: Boolean = false,
     val cloud: CloudSettings = CloudSettings(),
     val local: LocalAiSettings = LocalAiSettings(),
     val promptAssist: PromptAssistSettings = PromptAssistSettings(),
